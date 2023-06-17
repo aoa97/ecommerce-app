@@ -1,3 +1,4 @@
+import 'package:ecommerce/assets/fonts.gen.dart';
 import 'package:ecommerce/core/presentation/models/flavor_config.dart';
 import 'package:ecommerce/core/presentation/utils/colors.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
@@ -18,6 +19,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        fontFamily: FontFamily.metro,
         colorScheme: ColorScheme.fromSeed(
           seedColor: Palette.primary,
           background: Palette.background,
