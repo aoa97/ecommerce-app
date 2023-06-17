@@ -1,4 +1,7 @@
+import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
+import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,9 +10,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          context.read<LocaleCubit>().switchLocale();
+        },
       ),
-      body: const SafeArea(child: Center(child: Text("HomeScreen"))),
+      body: SafeArea(child: Center(child: Text(tr(context).welcome))),
     );
   }
 }
