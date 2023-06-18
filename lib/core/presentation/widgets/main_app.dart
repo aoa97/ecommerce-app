@@ -1,6 +1,7 @@
 import 'package:ecommerce/assets/fonts.gen.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/presentation/models/flavor_config.dart';
+import 'package:ecommerce/core/presentation/services/service_locator.dart';
 import 'package:ecommerce/core/presentation/utils/colors.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/features/home/presentation/screens/home_screen.dart';
@@ -17,7 +18,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<LocaleCubit>(create: (_) => LocaleCubit()), // TODO: ServiceLocator Instance
+        BlocProvider<LocaleCubit>(create: (_) => sl<LocaleCubit>()),
       ],
       child: Builder(
         builder: (context) {
