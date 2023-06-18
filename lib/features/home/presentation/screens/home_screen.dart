@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
-import 'package:ecommerce/l10n/l10n.dart';
+import 'package:ecommerce/core/presentation/widgets/loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,7 +14,11 @@ class HomeScreen extends StatelessWidget {
           context.read<LocaleCubit>().switchLocale();
         },
       ),
-      body: SafeArea(child: Center(child: Text(tr(context).welcome))),
+      body: const SafeArea(
+        child: Center(
+          child: LoadingIndicator(),
+        ),
+      ),
     );
   }
 }

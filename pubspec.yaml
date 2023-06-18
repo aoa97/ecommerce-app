@@ -9,12 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.3
   flutter_localizations:
     sdk: flutter
-  flutter_bloc: ^8.1.3
   flutter_native_splash: ^2.3.1
   flutter_svg: ^2.0.7
   go_router: ^8.0.5
+  lottie: ^2.4.0
   print_color: ^3.0.5
   reactive_forms: ^15.0.0
   shared_preferences: ^2.1.2
@@ -35,6 +36,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/fonts/
+    - assets/lottie/
 
   fonts:
     - family: Metro
@@ -58,7 +60,7 @@ flutter_gen:
     flutter_svg: true
     # flare_flutter: true
     # rive: true
-    # lottie: true
+    lottie: true
 
 flutter_native_splash:
   image: "assets/icons/logo.png"
