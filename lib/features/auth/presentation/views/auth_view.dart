@@ -1,4 +1,6 @@
 import 'package:ecommerce/assets/assets.gen.dart';
+import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
+import 'package:ecommerce/core/presentation/services/service_locator.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
@@ -23,6 +25,11 @@ class AuthView extends HookWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          sl<LocaleCubit>().switchLocale();
+        },
+      ),
       appBar: AppBar(
         title: Text(isLogin ? tr(context).login : tr(context).register),
       ),
