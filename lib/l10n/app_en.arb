@@ -1,4 +1,14 @@
 {
-"@_home": {}, 
-"welcome": "Welcome"
+"@_auth": {},
+"login": "Login",
+"register": "Sign Up",
+"forgot_password": "Forgot your password?",
+"no_account": "Don't have an account? ",
+"already": "Already have an account? ",
+"or_social_login": "Or login with social account",
+"or_social_register": "Or sign up with social account",
+"@_fields": {},
+"name": "Name",
+"email": "Email",
+"password": "Password"
 }
