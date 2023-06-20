@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class RoutesPageBuilders {
+class PageBuilders {
   static Page<CustomTransitionPage> slide({
-    required BuildContext context,
     required GoRouterState state,
     required Widget child,
   }) {

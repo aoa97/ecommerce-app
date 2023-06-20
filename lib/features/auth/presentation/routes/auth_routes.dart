@@ -1,4 +1,4 @@
-import 'package:ecommerce/core/presentation/router/routes_builders.dart';
+import 'package:ecommerce/core/presentation/router/page_builders.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/features/auth/presentation/views/auth_layout_view.dart';
 import 'package:ecommerce/features/auth/presentation/views/auth_view.dart';
@@ -16,8 +16,7 @@ final authRouter = StatefulShellRoute(
         GoRoute(
           path: '/auth',
           // redirect: HomeRedirect(),
-          pageBuilder: (context, state) => RoutesPageBuilders.slide(
-            context: context,
+          pageBuilder: (context, state) => PageBuilders.slide(
             state: state,
             child: const AuthView(authType: Auth.login),
           ),
@@ -25,8 +24,7 @@ final authRouter = StatefulShellRoute(
         GoRoute(
           path: '/register',
           // redirect: HomeRedirect(),
-          pageBuilder: (context, state) => RoutesPageBuilders.slide(
-            context: context,
+          pageBuilder: (context, state) => PageBuilders.slide(
             state: state,
             child: const AuthView(authType: Auth.register),
           ),
