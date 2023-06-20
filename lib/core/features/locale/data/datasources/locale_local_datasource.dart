@@ -15,7 +15,7 @@ class LocaleLocalDataSource implements ILocaleLocalDataSource {
 
   @override
   Future<void> cacheLocale(Locale locale) async {
-    await _sharedPrefsService.set("locale", locale.languageCode);
+    await _sharedPrefsService.setString("locale", locale.languageCode);
   }
 
   @override

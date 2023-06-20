@@ -17,8 +17,12 @@ class SharedPrefsService {
     return _prefs.getString(key);
   }
 
-  Future<bool> set(String key, dynamic value) async {
+  Future<bool> setMap(String key, dynamic value) async {
     return await _prefs.setString(key, jsonEncode(value));
+  }
+
+  Future<bool> setString(String key, dynamic value) async {
+    return await _prefs.setString(key, value);
   }
 
   Future<bool> delete(String key) async {
