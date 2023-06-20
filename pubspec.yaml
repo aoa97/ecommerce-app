@@ -44,16 +44,30 @@ flutter:
   fonts:
     - family: Metro
       fonts:
-        - asset: assets/fonts/metropolis.regular.otf
-        - asset: assets/fonts/metropolis.light.otf
+        - asset: assets/fonts/metro/metropolis.regular.otf
+        - asset: assets/fonts/metro/metropolis.light.otf
           weight: 200
-        - asset: assets/fonts/metropolis.medium.otf
+        - asset: assets/fonts/metro/metropolis.medium.otf
           weight: 400
-        - asset: assets/fonts/metropolis.semi-bold.otf
+        - asset: assets/fonts/metro/metropolis.semi-bold.otf
           weight: 500
-        - asset: assets/fonts/metropolis.bold.otf
+        - asset: assets/fonts/metro/metropolis.bold.otf
           weight: 600
-        - asset: assets/fonts/metropolis.black.otf
+        - asset: assets/fonts/metro/metropolis.black.otf
+          weight: 700
+
+    - family: Tajawal
+      fonts:
+        - asset: assets/fonts/tajawal/Tajawal-Regular.ttf
+        - asset: assets/fonts/tajawal/Tajawal-Light.ttf
+          weight: 200
+        - asset: assets/fonts/tajawal/Tajawal-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/tajawal/Tajawal-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/tajawal/Tajawal-Bold.ttf
+          weight: 600
+        - asset: assets/fonts/tajawal/Tajawal-ExtraBold.ttf
           weight: 700
 
 flutter_gen:
@@ -61,9 +75,9 @@ flutter_gen:
 
   integrations:
     flutter_svg: true
+    lottie: true
     # flare_flutter: true
     # rive: true
-    lottie: true
 
 flutter_native_splash:
   image: "assets/icons/logo.png"
