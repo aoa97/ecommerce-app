@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
-import 'package:ecommerce/core/presentation/config/theme.dart';
+import 'package:ecommerce/core/features/theme/theme.dart';
 import 'package:ecommerce/core/presentation/models/flavor_config.dart';
 import 'package:ecommerce/core/presentation/router/app_router.dart';
 import 'package:ecommerce/core/presentation/services/service_locator.dart';
@@ -21,15 +21,16 @@ class MainApp extends StatelessWidget {
       ],
       child: Builder(
         builder: (context) {
-          final currentLocale = context.select((LocaleCubit locale) => locale.val);
+          final appTheme = sl<AppTheme>();
+          final localeCubit = context.watch<LocaleCubit>();
 
           return MaterialApp.router(
             debugShowCheckedModeBanner: flavor.type == Flavor.development,
             title: flavor.appTitle,
             localizationsDelegates: L10n.localizationsDelegates,
             supportedLocales: L10n.supportedLocales,
-            locale: currentLocale,
-            theme: AppThemeData.light,
+            locale: localeCubit.val,
+            theme: appTheme.light(),
             routerConfig: appRouter,
           );
         },

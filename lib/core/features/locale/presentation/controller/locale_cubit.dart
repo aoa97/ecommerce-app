@@ -20,7 +20,7 @@ class LocaleCubit extends Cubit<LocaleState> {
     emit(SwitchLocaleState());
   }
 
-  bool get isRtl => val.languageCode == "ar";
+  bool get isArabic => val.languageCode == "ar";
 
   @override
   void onChange(Change<LocaleState> change) {
