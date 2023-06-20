@@ -73,7 +73,10 @@ class AuthView extends HookWidget {
               ),
             Sizes.paddingX24.sph,
             MainButton(
-              onPressed: () {},
+              onPressed: () {
+                // TODO: Temp
+                context.go("/");
+              },
               loading: false,
               label: isLogin ? tr(context).login : tr(context).register,
             ),
