@@ -12,38 +12,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
-class $AssetsFontsGen {
-  const $AssetsFontsGen();
-
-  /// File path: assets/fonts/metropolis.black.otf
-  String get metropolisBlack => 'assets/fonts/metropolis.black.otf';
-
-  /// File path: assets/fonts/metropolis.bold.otf
-  String get metropolisBold => 'assets/fonts/metropolis.bold.otf';
-
-  /// File path: assets/fonts/metropolis.light.otf
-  String get metropolisLight => 'assets/fonts/metropolis.light.otf';
-
-  /// File path: assets/fonts/metropolis.medium.otf
-  String get metropolisMedium => 'assets/fonts/metropolis.medium.otf';
-
-  /// File path: assets/fonts/metropolis.regular.otf
-  String get metropolisRegular => 'assets/fonts/metropolis.regular.otf';
-
-  /// File path: assets/fonts/metropolis.semi-bold.otf
-  String get metropolisSemiBold => 'assets/fonts/metropolis.semi-bold.otf';
-
-  /// List of all assets
-  List<String> get values => [
-        metropolisBlack,
-        metropolisBold,
-        metropolisLight,
-        metropolisMedium,
-        metropolisRegular,
-        metropolisSemiBold
-      ];
-}
-
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -110,7 +78,6 @@ class $AssetsLottieGen {
 class Assets {
   Assets._();
 
-  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottieGen lottie = $AssetsLottieGen();

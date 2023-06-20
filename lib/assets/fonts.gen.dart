@@ -12,4 +12,7 @@ class FontFamily {
 
   /// Font family: Metro
   static const String metro = 'Metro';
+
+  /// Font family: Tajawal
+  static const String tajawal = 'Tajawal';
 }
