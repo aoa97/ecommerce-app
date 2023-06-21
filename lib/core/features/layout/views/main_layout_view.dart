@@ -1,3 +1,4 @@
+import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -13,11 +14,11 @@ class MainLayoutView extends HookWidget {
 
     final destinations = useMemoized(
       () => [
-        (icon: const Icon(Icons.home), label: "Home", path: "/"),
-        (icon: const Icon(Icons.shop), label: "Shop", path: "/shop"),
-        (icon: const Icon(Icons.card_travel), label: "Bag", path: "/bag"),
-        (icon: const Icon(Icons.favorite), label: "Favorites", path: "/favorites"),
-        (icon: const Icon(Icons.person), label: "Profile", path: "/profile"),
+        (icon: const Icon(Icons.home), label: tr(context).home, path: "/"),
+        (icon: const Icon(Icons.shop), label: tr(context).shop, path: "/shop"),
+        (icon: const Icon(Icons.card_travel), label: tr(context).cart, path: "/bag"),
+        (icon: const Icon(Icons.favorite), label: tr(context).favorites, path: "/favorites"),
+        (icon: const Icon(Icons.person), label: tr(context).profile, path: "/profile"),
       ],
       [],
     );

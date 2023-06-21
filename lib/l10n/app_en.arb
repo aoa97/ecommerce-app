@@ -1,4 +1,10 @@
 {
+"@_layout": {},
+"home": "Home",
+"shop": "Shop",
+"cart": "Cart",
+"favorites": "Favorites",
+"profile": "Profile",
 "@_auth": {},
 "login": "Login",
 "register": "Sign Up",
