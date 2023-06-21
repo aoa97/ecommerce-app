@@ -8,9 +8,9 @@ abstract class ILocaleRepository {
 }
 
 class LocaleRepository implements ILocaleRepository {
-  final LocaleLocalDataSource _dataSource;
+  final ILocaleLocalDataSource _dataSource;
 
-  LocaleRepository({required LocaleLocalDataSource dataSource}) : _dataSource = dataSource;
+  LocaleRepository({required ILocaleLocalDataSource dataSource}) : _dataSource = dataSource;
 
   @override
   Future<void> cacheLocale(Locale locale) {

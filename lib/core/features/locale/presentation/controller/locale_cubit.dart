@@ -5,10 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:print_color/print_color.dart';
 
 class LocaleCubit extends Cubit<LocaleState> {
-  final LocaleRepository _localeRepository;
+  final ILocaleRepository _localeRepository;
   late Locale val;
 
-  LocaleCubit({required LocaleRepository localeRepository})
+  LocaleCubit({required ILocaleRepository localeRepository})
       : _localeRepository = localeRepository,
         super(LocalizationInitialState()) {
     val = _localeRepository.getCachedLocale();

@@ -22,11 +22,31 @@ class $AssetsIconsGen {
   /// File path: assets/icons/app-icon.png
   AssetGenImage get appIcon => const AssetGenImage('assets/icons/app-icon.png');
 
+  /// File path: assets/icons/bag-filled.svg
+  SvgGenImage get bagFilled => const SvgGenImage('assets/icons/bag-filled.svg');
+
+  /// File path: assets/icons/bag.svg
+  SvgGenImage get bag => const SvgGenImage('assets/icons/bag.svg');
+
   /// File path: assets/icons/facebook.svg
   SvgGenImage get facebook => const SvgGenImage('assets/icons/facebook.svg');
 
   /// File path: assets/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
+
+  /// File path: assets/icons/heart-filled.svg
+  SvgGenImage get heartFilled =>
+      const SvgGenImage('assets/icons/heart-filled.svg');
+
+  /// File path: assets/icons/heart.svg
+  SvgGenImage get heart => const SvgGenImage('assets/icons/heart.svg');
+
+  /// File path: assets/icons/home-filled.svg
+  SvgGenImage get homeFilled =>
+      const SvgGenImage('assets/icons/home-filled.svg');
+
+  /// File path: assets/icons/home.svg
+  SvgGenImage get home => const SvgGenImage('assets/icons/home.svg');
 
   /// File path: assets/icons/logo-12.png
   AssetGenImage get logo12 => const AssetGenImage('assets/icons/logo-12.png');
@@ -37,9 +57,40 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logo.svg
   SvgGenImage get logoSvg => const SvgGenImage('assets/icons/logo.svg');
 
+  /// File path: assets/icons/person-filled.svg
+  SvgGenImage get personFilled =>
+      const SvgGenImage('assets/icons/person-filled.svg');
+
+  /// File path: assets/icons/person.svg
+  SvgGenImage get person => const SvgGenImage('assets/icons/person.svg');
+
+  /// File path: assets/icons/shop-filled.svg
+  SvgGenImage get shopFilled =>
+      const SvgGenImage('assets/icons/shop-filled.svg');
+
+  /// File path: assets/icons/shop.svg
+  SvgGenImage get shop => const SvgGenImage('assets/icons/shop.svg');
+
   /// List of all assets
-  List<dynamic> get values =>
-      [appIconDev, appIcon, facebook, google, logo12, logoPng, logoSvg];
+  List<dynamic> get values => [
+        appIconDev,
+        appIcon,
+        bagFilled,
+        bag,
+        facebook,
+        google,
+        heartFilled,
+        heart,
+        homeFilled,
+        home,
+        logo12,
+        logoPng,
+        logoSvg,
+        personFilled,
+        person,
+        shopFilled,
+        shop
+      ];
 }
 
 class $AssetsImagesGen {
