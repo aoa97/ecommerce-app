@@ -1,6 +1,6 @@
 import 'package:ecommerce/assets/fonts.gen.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
-import 'package:ecommerce/core/presentation/utils/colors.dart';
+import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -20,10 +20,10 @@ class AppTheme {
         error: Palette.error,
       ),
       appBarTheme: AppBarTheme(
-        toolbarHeight: Sizes.mqh * .15,
-        backgroundColor: Palette.background,
-        titleTextStyle: _baseTextStyle(fontWeight: FontWeight.w700, fontSize: 34),
         elevation: 0,
+        color: Palette.white,
+        centerTitle: true,
+        titleTextStyle: _baseTextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -71,7 +71,7 @@ class AppTheme {
       fontFamily: localeCubit.isArabic ? FontFamily.tajawal : FontFamily.metro,
       fontSize: fontSize,
       fontWeight: fontWeight,
-      color: color ?? Colors.black,
+      color: color ?? Palette.black,
     );
   }
 }

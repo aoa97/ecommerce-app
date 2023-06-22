@@ -22,6 +22,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/app-icon.png
   AssetGenImage get appIcon => const AssetGenImage('assets/icons/app-icon.png');
 
+  /// File path: assets/icons/back-rtl.svg
+  SvgGenImage get backRtl => const SvgGenImage('assets/icons/back-rtl.svg');
+
+  /// File path: assets/icons/back.svg
+  SvgGenImage get back => const SvgGenImage('assets/icons/back.svg');
+
   /// File path: assets/icons/bag-filled.svg
   SvgGenImage get bagFilled => const SvgGenImage('assets/icons/bag-filled.svg');
 
@@ -75,6 +81,8 @@ class $AssetsIconsGen {
   List<dynamic> get values => [
         appIconDev,
         appIcon,
+        backRtl,
+        back,
         bagFilled,
         bag,
         facebook,

@@ -31,7 +31,11 @@ class AuthScreen extends HookWidget {
         },
       ),
       appBar: AppBar(
-        title: Text(isLogin ? tr(context).login : tr(context).register),
+        toolbarHeight: Sizes.mqh * .15,
+        title: Text(
+          isLogin ? tr(context).login : tr(context).register,
+          style: Theme.of(context).textTheme.displayLarge,
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(Sizes.paddingX16),

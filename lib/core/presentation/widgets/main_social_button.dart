@@ -1,4 +1,4 @@
-import 'package:ecommerce/core/presentation/utils/colors.dart';
+import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

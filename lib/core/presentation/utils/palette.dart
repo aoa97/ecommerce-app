@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 class Palette {
   static const primary = Color(0xFF19A7CE);
@@ -10,4 +10,6 @@ class Palette {
   static const success = Color(0xFF00DFA2);
   static const error = Color(0xFFF01F0E);
   static const hot = Color(0xFFFF6969);
+
+  static const shadow = BoxShadow(color: Color(0x14000000), blurRadius: 24, offset: Offset(0, 4));
 }
