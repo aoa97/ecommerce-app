@@ -3,6 +3,7 @@ import 'package:ecommerce/core/application/service_locator.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
+import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/main_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_social_button.dart';
@@ -31,6 +32,8 @@ class AuthScreen extends HookWidget {
         },
       ),
       appBar: AppBar(
+        centerTitle: false,
+        backgroundColor: Palette.background,
         toolbarHeight: Sizes.mqh * .15,
         title: Text(
           isLogin ? tr(context).login : tr(context).register,
