@@ -1,8 +1,8 @@
+import 'package:ecommerce/core/application/service_locator.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/features/theme/theme.dart';
 import 'package:ecommerce/core/presentation/models/flavor_config.dart';
 import 'package:ecommerce/core/presentation/router/app_router.dart';
-import 'package:ecommerce/core/presentation/services/service_locator.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';

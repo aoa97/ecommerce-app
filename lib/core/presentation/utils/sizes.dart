@@ -19,6 +19,7 @@ abstract class Sizes {
   static double paddingX32 = paddingX4 * 8;
   static double paddingX40 = paddingX4 * 10;
   static double paddingX48 = paddingX4 * 12;
+  static double paddingX56 = paddingX4 * 14;
 
   // Radius
   static double radius = 4;
