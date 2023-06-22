@@ -1,6 +1,6 @@
 import 'package:ecommerce/assets/assets.gen.dart';
+import 'package:ecommerce/core/application/service_locator.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
-import 'package:ecommerce/core/presentation/services/service_locator.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
@@ -13,10 +13,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-class AuthView extends HookWidget {
+class AuthScreen extends HookWidget {
   final Auth authType;
 
-  const AuthView({super.key, required this.authType});
+  const AuthScreen({super.key, required this.authType});
 
   @override
   Widget build(BuildContext context) {

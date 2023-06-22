@@ -18,8 +18,8 @@ class ServiceLocator {
     sl.registerLazySingleton<ApiService>(() => ApiService(baseUrl: apiBaseUrl, locale: sl<LocaleCubit>()));
 
     // Locale
-    sl.registerLazySingleton<ILocaleLocalDataSource>(() => LocaleLocalDataSource(sharedPrefsService: sl()));
-    sl.registerLazySingleton<ILocaleRepository>(() => LocaleRepository(dataSource: sl()));
+    sl.registerLazySingleton<LocaleLocalDataSource>(() => LocaleLocalDataSource(sharedPrefsService: sl()));
+    sl.registerLazySingleton<LocaleRepository>(() => LocaleRepository(dataSource: sl()));
     sl.registerLazySingleton<LocaleCubit>(() => LocaleCubit(localeRepository: sl()));
   }
 }
