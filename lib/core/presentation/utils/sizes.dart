@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 final _mediaQuery = MediaQueryData.fromView(PlatformDispatcher.instance.implicitView!);
 
@@ -10,18 +11,27 @@ abstract class Sizes {
   static final double statusBarHeight = _mediaQuery.padding.top;
   static final double homeIndicatorHeight = _mediaQuery.viewPadding.bottom;
 
-  // Padding
-  static double paddingX4 = mqh * .0050;
-  static double paddingX8 = paddingX4 * 2;
-  static double paddingX12 = paddingX4 * 3;
-  static double paddingX16 = paddingX4 * 4;
-  static double paddingX24 = paddingX4 * 6;
-  static double paddingX32 = paddingX4 * 8;
-  static double paddingX40 = paddingX4 * 10;
-  static double paddingX48 = paddingX4 * 12;
-  static double paddingX56 = paddingX4 * 14;
+  // Sizes Used
+  static double x2 = 2.h;
+  static double x4 = 4.h;
+  static double x8 = 8.h;
+  static double x12 = 12.h;
+  static double x16 = 16.h;
+  static double x20 = 20.h;
+  static double x24 = 24.h;
+  static double x28 = 28.h;
+  static double x32 = 32.h;
+  static double x36 = 36.h;
+  static double x40 = 40.h;
+  static double x48 = 48.h;
+  static double x56 = 56.h;
+  static double x148 = 148.h;
+  static double x184 = 184.h;
+  static double x196 = 196.h;
+  static double x276 = 276.h;
 
   // Radius
   static double radius = 4;
+  static double radiusMd = 8;
   static double radiusLg = 24;
 }

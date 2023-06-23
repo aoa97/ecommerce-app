@@ -12,5 +12,7 @@ final _config = FlavorConfig(
 
 void main() async {
   await mainInitializer(flavor: _config);
-  runApp(MainApp(flavor: _config));
+  runApp(
+    MainApp(flavor: _config),
+  );
 }

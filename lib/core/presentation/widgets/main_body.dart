@@ -10,7 +10,7 @@ class MainBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        padding: EdgeInsets.all(Sizes.paddingX16),
+        padding: EdgeInsets.all(Sizes.x16),
         child: child,
       ),
     );

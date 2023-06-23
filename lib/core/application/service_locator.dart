@@ -13,7 +13,7 @@ class ServiceLocator {
     required String apiBaseUrl,
   }) {
     // Global
-    sl.registerLazySingleton<AppTheme>(() => AppTheme(localeCubit: sl()));
+    sl.registerLazySingleton<AppTheme>(() => AppTheme(localeCubit: sl<LocaleCubit>()));
     sl.registerLazySingleton<SharedPrefsService>(() => SharedPrefsService());
     sl.registerLazySingleton<ApiService>(() => ApiService(baseUrl: apiBaseUrl, locale: sl<LocaleCubit>()));
 

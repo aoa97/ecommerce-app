@@ -17,7 +17,7 @@ class MainButton extends StatelessWidget {
   }
 
   _buildLoader() => SizedBox.square(
-        dimension: Sizes.paddingX16,
-        child: const CircularProgressIndicator(color: Colors.white),
+        dimension: Sizes.x16,
+        child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 1.9),
       );
 }

@@ -3,6 +3,7 @@ import 'package:ecommerce/core/features/locale/presentation/controller/locale_cu
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTheme {
   final LocaleCubit localeCubit;
@@ -32,13 +33,25 @@ class AppTheme {
           backgroundColor: Palette.primary,
           foregroundColor: Palette.white,
           textStyle: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 14),
-          minimumSize: Size(double.infinity, Sizes.paddingX48),
+          minimumSize: Size(double.infinity, Sizes.x48),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          textStyle: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          overlayColor: MaterialStateProperty.resolveWith<Color>(
-            (Set<MaterialState> states) {
+          textStyle: MaterialStateProperty.resolveWith(
+            (states) => _baseTextStyle(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          overlayColor: MaterialStateProperty.resolveWith(
+            (states) {
               if (states.contains(MaterialState.pressed)) {
                 return Colors.grey.withOpacity(0.3);
               }
@@ -54,22 +67,26 @@ class AppTheme {
         labelStyle: TextStyle(color: Palette.grey),
       ),
       textTheme: TextTheme(
-        displayLarge: _baseTextStyle(fontWeight: FontWeight.w700, fontSize: 34),
-        displayMedium: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 24),
-        displaySmall: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-        headlineMedium: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 16),
-        headlineSmall: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 14),
-        bodyLarge: _baseTextStyle(fontSize: 16),
-        bodyMedium: _baseTextStyle(fontSize: 14),
-        bodySmall: _baseTextStyle(fontSize: 11, color: Palette.grey),
+        displayLarge: _baseTextStyle(fontWeight: FontWeight.w700, fontSize: 34.sp),
+        displayMedium: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 24.sp),
+        displaySmall: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 18.sp),
+        headlineMedium: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
+        headlineSmall: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+        labelLarge: _baseTextStyle(fontSize: 16.sp, color: Palette.grey, fontWeight: FontWeight.w400),
+        labelMedium: _baseTextStyle(fontSize: 14.sp, color: Palette.grey, fontWeight: FontWeight.w400),
+        labelSmall: _baseTextStyle(fontSize: 12.sp, color: Palette.grey, fontWeight: FontWeight.w400),
+        bodyLarge: _baseTextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
+        bodyMedium: _baseTextStyle(fontSize: 14.sp, fontWeight: FontWeight.w400),
+        bodySmall: _baseTextStyle(fontSize: 11.sp, fontWeight: FontWeight.w400),
       ),
     );
   }
 
   TextStyle _baseTextStyle({double? fontSize, FontWeight? fontWeight, Color? color}) {
     return TextStyle(
+      height: 0,
       fontFamily: localeCubit.isArabic ? FontFamily.tajawal : FontFamily.metro,
-      fontSize: fontSize,
+      fontSize: fontSize ?? 16.sp,
       fontWeight: fontWeight,
       color: color ?? Palette.black,
     );

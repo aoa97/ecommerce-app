@@ -7,6 +7,7 @@ import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainApp extends StatelessWidget {
   final FlavorConfig flavor;
@@ -24,14 +25,24 @@ class MainApp extends StatelessWidget {
           final appTheme = sl<AppTheme>();
           final localeCubit = context.watch<LocaleCubit>();
 
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: flavor.type == Flavor.development,
-            title: flavor.appTitle,
-            localizationsDelegates: L10n.localizationsDelegates,
-            supportedLocales: L10n.supportedLocales,
-            locale: localeCubit.val,
-            theme: appTheme.light(),
-            routerConfig: appRouter,
+          return ScreenUtilInit(
+            designSize: const Size(375, 812),
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (context, __) => MediaQuery(
+              data: MediaQuery.of(context).copyWith(
+                textScaleFactor: 1.sp,
+              ),
+              child: MaterialApp.router(
+                debugShowCheckedModeBanner: flavor.type == Flavor.development,
+                title: flavor.appTitle,
+                localizationsDelegates: L10n.localizationsDelegates,
+                supportedLocales: L10n.supportedLocales,
+                locale: localeCubit.val,
+                theme: appTheme.light(),
+                routerConfig: appRouter,
+              ),
+            ),
           );
         },
       ),

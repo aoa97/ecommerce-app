@@ -21,11 +21,11 @@ class MainSocialButton extends StatelessWidget {
         child: InkWell(
           onTap: onPressed,
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: Sizes.paddingX16, horizontal: Sizes.paddingX24),
+            padding: EdgeInsets.symmetric(vertical: Sizes.x16, horizontal: Sizes.x24),
             child: SvgPicture.asset(
               icon,
-              width: Sizes.paddingX24,
-              height: Sizes.paddingX24,
+              width: Sizes.x24,
+              height: Sizes.x24,
             ),
           ),
         ),

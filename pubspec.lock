@@ -331,6 +331,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  flutter_rating_bar:
+    dependency: "direct main"
+    description:
+      name: flutter_rating_bar
+      sha256: d2af03469eac832c591a1eba47c91ecc871fe5708e69967073c043b2d775ed93
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.1"
+  flutter_screenutil:
+    dependency: "direct main"
+    description:
+      name: flutter_screenutil
+      sha256: "1b61f8c4cbf965104b6ca7160880ff1af6755aad7fec70b58444245132453745"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.8.4"
   flutter_svg:
     dependency: "direct main"
     description:
