@@ -15,6 +15,9 @@ extension TextStyleExtension on BuildContext {
   TextStyle? get bodyLargeText => Theme.of(this).textTheme.bodyLarge;
   TextStyle? get bodyMediumText => Theme.of(this).textTheme.bodyMedium;
   TextStyle? get bodySmallText => Theme.of(this).textTheme.bodySmall;
+  TextStyle? get labelSmallText => Theme.of(this).textTheme.labelSmall;
+  TextStyle? get labelMediumText => Theme.of(this).textTheme.labelMedium;
+  TextStyle? get labelLargeText => Theme.of(this).textTheme.labelLarge;
   Color? get primaryColor => Theme.of(this).primaryColor;
 }
 

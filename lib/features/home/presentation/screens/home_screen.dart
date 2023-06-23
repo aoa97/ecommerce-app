@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
+import 'package:ecommerce/core/presentation/widgets/transparent_scaffold.dart';
 import 'package:ecommerce/features/home/presentation/container/horizontal_products_section.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return TransparentScaffold(
+      darkIcons: true,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -17,17 +19,17 @@ class HomeScreen extends StatelessWidget {
               color: Palette.primary,
               height: Sizes.x196 + Sizes.statusBarHeight,
             ),
-            Sizes.x32.sph,
+            Sizes.x24.sph,
             HProductsSection(
               title: "Sale",
               subTitle: "Super Summer Sale",
               onViewAll: () {},
               items: const [],
             ),
-            Sizes.x32.sph,
+            Sizes.x20.sph,
             HProductsSection(
-              title: "Sale",
-              subTitle: "Super Summer Sale",
+              title: "New",
+              subTitle: "You’ve never seen it before!",
               onViewAll: () {},
               items: const [],
             ),

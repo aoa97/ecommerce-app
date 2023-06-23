@@ -28,14 +28,17 @@ class HProductsSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(title, style: context.displayLargeText),
-              TextButton(
-                onPressed: onViewAll,
-                child: const Text("View All"),
+              Padding(
+                padding: EdgeInsetsDirectional.only(end: Sizes.x16),
+                child: TextButton(
+                  onPressed: onViewAll,
+                  child: const Text("View All"),
+                ),
               ),
             ],
           ),
           Sizes.x2.sph,
-          Text(subTitle, style: context.bodySmallText),
+          Text(subTitle, style: context.labelSmallText),
           Sizes.x20.sph,
           SizedBox(
             height: Sizes.x276,

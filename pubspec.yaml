@@ -24,6 +24,7 @@ dependencies:
   print_color: ^3.0.5
   reactive_forms: ^15.0.0
   shared_preferences: ^2.1.2
+  flutter_screenutil: ^5.8.4
 
 dev_dependencies:
   build_runner: null

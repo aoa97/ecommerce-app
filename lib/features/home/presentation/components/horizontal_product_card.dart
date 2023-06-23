@@ -4,6 +4,7 @@ import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HProductCard extends StatelessWidget {
   final String image;
@@ -45,7 +46,6 @@ class HProductCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(Sizes.radiusMd),
                 child: Image.network(
                   image,
-                  width: Sizes.x148,
                   height: Sizes.x184,
                   fit: BoxFit.cover,
                 ),
@@ -57,13 +57,13 @@ class HProductCard extends StatelessWidget {
                   width: Sizes.x40,
                   height: Sizes.x24,
                   decoration: BoxDecoration(
-                    color: Palette.hot,
+                    color: Palette.success,
                     borderRadius: BorderRadius.circular(Sizes.radiusLg),
                   ),
                   child: Center(
                     child: Text(
                       "-${discountPercentage.round()}%",
-                      style: context.headlineSmallText!.copyWith(fontSize: 11, color: Palette.white),
+                      style: context.headlineSmallText!.copyWith(fontSize: 10.sp, color: Palette.white),
                     ),
                   ),
                 ),
@@ -79,8 +79,8 @@ class HProductCard extends StatelessWidget {
                       shadows: [Palette.shadow],
                     ),
                     clipBehavior: Clip.antiAlias,
-                    width: 36,
-                    height: 36,
+                    width: Sizes.x36,
+                    height: Sizes.x36,
                     child: UnconstrainedBox(
                       child: isFavorite ? Assets.icons.favoriteFilled.svg() : Assets.icons.favorite.svg(),
                     ),
@@ -106,16 +106,16 @@ class HProductCard extends StatelessWidget {
                 ),
                 onRatingUpdate: (rating) {},
               ),
-              Sizes.x4.spw,
-              Text("($reviewsCount)", style: context.bodySmallText),
+              1.w.spw,
+              Text("($reviewsCount)", style: context.labelSmallText!.copyWith(fontSize: 10.sp)),
             ],
           ),
           Sizes.x4.sph,
-          Text(brand, style: context.bodySmallText),
+          Text(brand, style: context.labelSmallText),
           Sizes.x2.sph,
           Text(
             name,
-            style: context.headlineMediumText,
+            style: context.headlineSmallText,
             overflow: TextOverflow.ellipsis,
           ),
           Sizes.x2.sph,
@@ -132,7 +132,7 @@ class HProductCard extends StatelessWidget {
                 const TextSpan(text: " "),
                 TextSpan(
                   text: "${priceAfter.round()}\$",
-                  style: context.headlineSmallText!.copyWith(color: Palette.hot),
+                  style: context.headlineSmallText!.copyWith(color: Palette.success),
                 ),
               ],
             ),
