@@ -8,8 +8,10 @@ class ApiService {
   final LocaleCubit _locale;
   late final Dio _dio;
 
-  ApiService({required String baseUrl, required LocaleCubit locale})
-      : _baseUrl = baseUrl,
+  ApiService({
+    required String baseUrl,
+    required LocaleCubit locale,
+  })  : _baseUrl = baseUrl,
         _locale = locale {
     _init();
   }

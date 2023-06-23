@@ -32,7 +32,7 @@ class AppTheme {
           backgroundColor: Palette.primary,
           foregroundColor: Palette.white,
           textStyle: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 14),
-          minimumSize: Size(double.infinity, Sizes.paddingX48),
+          minimumSize: Size(double.infinity, Sizes.x48),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
@@ -56,12 +56,12 @@ class AppTheme {
       textTheme: TextTheme(
         displayLarge: _baseTextStyle(fontWeight: FontWeight.w700, fontSize: 34),
         displayMedium: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 24),
-        displaySmall: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-        headlineMedium: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+        displaySmall: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+        headlineMedium: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 16),
         headlineSmall: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 14),
-        bodyLarge: _baseTextStyle(fontSize: 16),
-        bodyMedium: _baseTextStyle(fontSize: 14),
-        bodySmall: _baseTextStyle(fontSize: 11, color: Palette.grey),
+        bodyLarge: _baseTextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+        bodyMedium: _baseTextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+        bodySmall: _baseTextStyle(fontSize: 11, color: Palette.grey, fontWeight: FontWeight.w400),
       ),
     );
   }

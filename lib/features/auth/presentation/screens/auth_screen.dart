@@ -41,7 +41,7 @@ class AuthScreen extends HookWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(Sizes.paddingX16),
+        padding: EdgeInsets.all(Sizes.x16),
         child: Column(
           children: [
             if (!isLogin) ...[
@@ -49,13 +49,13 @@ class AuthScreen extends HookWidget {
                 formControl: FormControl(),
                 label: tr(context).name,
               ),
-              Sizes.paddingX8.sph,
+              Sizes.x8.sph,
             ],
             MainTextField(
               formControl: FormControl(),
               label: tr(context).email,
             ),
-            Sizes.paddingX8.sph,
+            Sizes.x8.sph,
             MainTextField(
               obsecure: !visiblePassword.value,
               formControl: FormControl(),
@@ -65,7 +65,7 @@ class AuthScreen extends HookWidget {
                 icon: Icon(visiblePassword.value ? Icons.visibility_off : Icons.visibility),
               ),
             ),
-            Sizes.paddingX8.sph,
+            Sizes.x8.sph,
             if (isLogin)
               Align(
                 alignment: AlignmentDirectional.centerEnd,
@@ -78,7 +78,7 @@ class AuthScreen extends HookWidget {
                   ),
                 ),
               ),
-            Sizes.paddingX24.sph,
+            Sizes.x24.sph,
             MainButton(
               onPressed: () {
                 // TODO: Temp
@@ -87,7 +87,7 @@ class AuthScreen extends HookWidget {
               loading: false,
               label: isLogin ? tr(context).login : tr(context).register,
             ),
-            Sizes.paddingX24.sph,
+            Sizes.x24.sph,
             TextButton(
               onPressed: () {
                 context.go(isLogin ? "/register" : "/auth");
@@ -112,7 +112,7 @@ class AuthScreen extends HookWidget {
               style: context.headlineSmallText,
               textAlign: TextAlign.center,
             ),
-            Sizes.paddingX12.sph,
+            Sizes.x12.sph,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -120,7 +120,7 @@ class AuthScreen extends HookWidget {
                   icon: Assets.icons.facebook.path,
                   onPressed: () {},
                 ),
-                Sizes.paddingX16.spw,
+                Sizes.x16.spw,
                 MainSocialButton(
                   icon: Assets.icons.google.path,
                   onPressed: () {},

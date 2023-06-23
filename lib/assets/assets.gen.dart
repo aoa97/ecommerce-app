@@ -37,6 +37,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/facebook.svg
   SvgGenImage get facebook => const SvgGenImage('assets/icons/facebook.svg');
 
+  /// File path: assets/icons/favorite-filled.svg
+  SvgGenImage get favoriteFilled =>
+      const SvgGenImage('assets/icons/favorite-filled.svg');
+
+  /// File path: assets/icons/favorite.svg
+  SvgGenImage get favorite => const SvgGenImage('assets/icons/favorite.svg');
+
   /// File path: assets/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
 
@@ -77,6 +84,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/shop.svg
   SvgGenImage get shop => const SvgGenImage('assets/icons/shop.svg');
 
+  /// File path: assets/icons/star-filled.svg
+  SvgGenImage get starFilled =>
+      const SvgGenImage('assets/icons/star-filled.svg');
+
+  /// File path: assets/icons/star.svg
+  SvgGenImage get star => const SvgGenImage('assets/icons/star.svg');
+
   /// List of all assets
   List<dynamic> get values => [
         appIconDev,
@@ -86,6 +100,8 @@ class $AssetsIconsGen {
         bagFilled,
         bag,
         facebook,
+        favoriteFilled,
+        favorite,
         google,
         heartFilled,
         heart,
@@ -97,7 +113,9 @@ class $AssetsIconsGen {
         personFilled,
         person,
         shopFilled,
-        shop
+        shop,
+        starFilled,
+        star
       ];
 }
 

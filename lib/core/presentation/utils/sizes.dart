@@ -11,17 +11,24 @@ abstract class Sizes {
   static final double homeIndicatorHeight = _mediaQuery.viewPadding.bottom;
 
   // Padding
-  static double paddingX4 = mqh * .0050;
-  static double paddingX8 = paddingX4 * 2;
-  static double paddingX12 = paddingX4 * 3;
-  static double paddingX16 = paddingX4 * 4;
-  static double paddingX24 = paddingX4 * 6;
-  static double paddingX32 = paddingX4 * 8;
-  static double paddingX40 = paddingX4 * 10;
-  static double paddingX48 = paddingX4 * 12;
-  static double paddingX56 = paddingX4 * 14;
+  static double x4 = mqh * .0050;
+  static double x2 = x4 / 2;
+  static double x8 = x4 * 2;
+  static double x12 = x4 * 3;
+  static double x16 = x4 * 4;
+  static double x20 = x4 * 5;
+  static double x24 = x4 * 6;
+  static double x32 = x4 * 8;
+  static double x40 = x4 * 10;
+  static double x48 = x4 * 12;
+  static double x56 = x4 * 14;
+  static double x148 = x4 * 37;
+  static double x184 = x4 * 46;
+  static double x196 = x4 * 49;
+  static double x276 = x4 * 69;
 
   // Radius
   static double radius = 4;
+  static double radiusMd = 8;
   static double radiusLg = 24;
 }
