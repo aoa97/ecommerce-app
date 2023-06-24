@@ -1,4 +1,4 @@
-import 'package:ecommerce/core/application/api_service.dart';
+import 'package:ecommerce/core/application/api_service/api_service.dart';
 import 'package:ecommerce/core/application/shared_prefs_service.dart';
 import 'package:ecommerce/core/features/locale/data/datasources/locale_local_datasource.dart';
 import 'package:ecommerce/core/features/locale/data/repos/locale_repository.dart';
