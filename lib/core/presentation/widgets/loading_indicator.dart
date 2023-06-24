@@ -11,8 +11,8 @@ class LoadingIndicator extends StatelessWidget {
     final mq = MediaQuery.sizeOf(context);
 
     return SizedBox.square(
-      dimension: size ?? mq.width * .25,
-      child: Assets.lottie.loaderSix.lottie(),
+      dimension: size ?? mq.width * .50,
+      child: Assets.lottie.loaderTwo.lottie(),
     );
   }
 }

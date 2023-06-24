@@ -10,11 +10,10 @@ class HProductCard extends StatelessWidget {
   final String image;
   final String name;
   final String brand;
-  final double priceAfter;
-  final double priceBefore;
-  final double discountPercentage;
-  final double rating;
-  final int reviewsCount;
+  final num priceAfter;
+  final num priceBefore;
+  final num discountPercentage;
+  final num rating;
   final bool isFavorite;
 
   const HProductCard({
@@ -26,7 +25,6 @@ class HProductCard extends StatelessWidget {
     required this.priceBefore,
     required this.discountPercentage,
     required this.rating,
-    required this.reviewsCount,
     required this.isFavorite,
   });
 
@@ -96,7 +94,7 @@ class HProductCard extends StatelessWidget {
                 itemSize: 13,
                 ignoreGestures: true,
                 itemPadding: const EdgeInsets.symmetric(horizontal: 1),
-                initialRating: rating,
+                initialRating: rating.toDouble(),
                 direction: Axis.horizontal,
                 itemCount: 5,
                 ratingWidget: RatingWidget(
@@ -107,7 +105,7 @@ class HProductCard extends StatelessWidget {
                 onRatingUpdate: (rating) {},
               ),
               1.w.spw,
-              Text("($reviewsCount)", style: context.labelSmallText!.copyWith(fontSize: 10.sp)),
+              // Text("($reviewsCount)", style: context.labelSmallText!.copyWith(fontSize: 10.sp)),
             ],
           ),
           Sizes.x4.sph,

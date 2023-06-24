@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 final _config = FlavorConfig(
   type: Flavor.development,
   appTitle: "E-Commerce (Dev)",
-  apiBaseUrl: "https://qc.eommerce.com",
+  apiBaseUrl: "https://dummyjson.com/",
 );
 
 void main() async {
