@@ -8,7 +8,7 @@ class Palette {
   static const black = Color(0xFF222222);
   static const white = Color(0xFFFFFFFF);
   static const success = Color(0xFF00BE8A);
-  static const error = Color(0xFFF01F0E);
+  static const error = Color(0xFFFE646F);
 
   static const shadow = BoxShadow(color: Color(0x14000000), blurRadius: 24, offset: Offset(0, 4));
 }
