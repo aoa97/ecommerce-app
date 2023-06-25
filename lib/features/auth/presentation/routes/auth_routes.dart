@@ -16,7 +16,7 @@ final authRouter = StatefulShellRoute(
         GoRoute(
           path: '/auth',
           // redirect: HomeRedirect(),
-          pageBuilder: (context, state) => PageBuilders.slide(
+          pageBuilder: (context, state) => PageBuilders.slideVertical(
             state: state,
             child: const AuthScreen(authType: Auth.login),
           ),
@@ -24,7 +24,7 @@ final authRouter = StatefulShellRoute(
         GoRoute(
           path: '/register',
           // redirect: HomeRedirect(),
-          pageBuilder: (context, state) => PageBuilders.slide(
+          pageBuilder: (context, state) => PageBuilders.slideVertical(
             state: state,
             child: const AuthScreen(authType: Auth.register),
           ),

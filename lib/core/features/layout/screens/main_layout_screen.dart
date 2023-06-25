@@ -1,6 +1,4 @@
 import 'package:ecommerce/assets/assets.gen.dart';
-import 'package:ecommerce/core/application/service_locator.dart';
-import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/l10n/l10n.dart';
@@ -53,11 +51,6 @@ class MainLayoutScreen extends HookWidget {
 
     return Scaffold(
       body: child,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          sl<LocaleCubit>().switchLocale();
-        },
-      ),
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         selectedItemColor: Palette.primary,

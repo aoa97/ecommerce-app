@@ -69,7 +69,7 @@ class AppTheme {
       textTheme: TextTheme(
         displayLarge: _baseTextStyle(fontWeight: FontWeight.w700, fontSize: 34.sp),
         displayMedium: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 24.sp),
-        displaySmall: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 18.sp),
+        displaySmall: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 20.sp),
         headlineLarge: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 18.sp),
         headlineMedium: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp),
         headlineSmall: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),

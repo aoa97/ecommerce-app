@@ -64,6 +64,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logo-12.png
   AssetGenImage get logo12 => const AssetGenImage('assets/icons/logo-12.png');
 
+  /// File path: assets/icons/logo-text.svg
+  SvgGenImage get logoText => const SvgGenImage('assets/icons/logo-text.svg');
+
   /// File path: assets/icons/logo.png
   AssetGenImage get logoPng => const AssetGenImage('assets/icons/logo.png');
 
@@ -108,6 +111,7 @@ class $AssetsIconsGen {
         homeFilled,
         home,
         logo12,
+        logoText,
         logoPng,
         logoSvg,
         personFilled,
