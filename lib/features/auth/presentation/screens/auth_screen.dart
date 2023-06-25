@@ -1,6 +1,4 @@
 import 'package:ecommerce/assets/assets.gen.dart';
-import 'package:ecommerce/core/application/service_locator.dart';
-import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
@@ -26,11 +24,6 @@ class AuthScreen extends HookWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          sl<LocaleCubit>().switchLocale();
-        },
-      ),
       appBar: AppBar(
         centerTitle: false,
         backgroundColor: Palette.background,

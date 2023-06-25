@@ -15,23 +15,23 @@ final mainLayoutRouter = ShellRoute(
   routes: <RouteBase>[
     GoRoute(
       path: '/',
-      pageBuilder: (context, state) => PageBuilders.slide(state: state, child: const HomeScreen()),
+      pageBuilder: (context, state) => PageBuilders.slideHorizontal(state: state, child: const HomeScreen()),
     ),
     GoRoute(
       path: '/shop',
-      pageBuilder: (context, state) => PageBuilders.slide(state: state, child: const ShopScreen()),
+      pageBuilder: (context, state) => PageBuilders.slideHorizontal(state: state, child: const ShopScreen()),
     ),
     GoRoute(
       path: '/bag',
-      pageBuilder: (context, state) => PageBuilders.slide(state: state, child: const CartScreen()),
+      pageBuilder: (context, state) => PageBuilders.slideHorizontal(state: state, child: const CartScreen()),
     ),
     GoRoute(
       path: '/favorites',
-      pageBuilder: (context, state) => PageBuilders.slide(state: state, child: const FavoritesScreen()),
+      pageBuilder: (context, state) => PageBuilders.slideHorizontal(state: state, child: const FavoritesScreen()),
     ),
     GoRoute(
       path: '/profile',
-      pageBuilder: (context, state) => PageBuilders.slide(state: state, child: const ProfileScreen()),
+      pageBuilder: (context, state) => PageBuilders.slideHorizontal(state: state, child: const ProfileScreen()),
     ),
   ],
 );

@@ -28,5 +28,8 @@
 "@_fields": {},
 "name": "Name",
 "email": "Email",
-"password": "Password"
+"password": "Password",
+"@_profile": {},
+"language": "Language",
+"join_message": "Join us and elevate your\nExperience"
 }
