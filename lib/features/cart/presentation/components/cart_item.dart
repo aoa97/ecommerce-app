@@ -55,7 +55,7 @@ class CartItem extends StatelessWidget {
                     width: double.infinity,
                     child: Image.network(imageUri, fit: BoxFit.cover),
                   ),
-                  8.h.sph,
+                  const Spacer(),
                   ReactiveCounter(
                     formControl: FormControl(value: 1),
                     maxValue: stock,
