@@ -52,6 +52,7 @@ class MainLayoutScreen extends HookWidget {
     return Scaffold(
       body: child,
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Palette.white,
         showUnselectedLabels: true,
         selectedItemColor: Palette.primary,
         unselectedItemColor: Palette.grey,

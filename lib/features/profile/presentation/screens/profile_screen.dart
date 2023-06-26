@@ -22,6 +22,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: MainAppBar.wide(
         context,
+        centerTitle: true,
         title: Assets.icons.logoText.svg(),
       ),
       body: MainBody(
