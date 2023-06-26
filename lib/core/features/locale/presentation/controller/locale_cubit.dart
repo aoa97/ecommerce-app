@@ -15,9 +15,11 @@ class LocaleCubit extends Cubit<LocaleState> {
   }
 
   void switchLocale() async {
+    emit(SwitchLocaleLoadingState());
     val = val.languageCode == "en" ? const Locale("ar") : const Locale("en");
     await _localeRepository.cacheLocale(val);
-    emit(SwitchLocaleState());
+    await Future.delayed(const Duration(seconds: 1)); // Simulate Async operations
+    emit(SwitchLocaleDoneState());
   }
 
   bool get isArabic => val.languageCode == "ar";
