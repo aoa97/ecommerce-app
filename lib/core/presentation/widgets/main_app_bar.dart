@@ -1,6 +1,7 @@
 import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/application/service_locator.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
+import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/helpers.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +29,12 @@ class MainAppBar {
     BuildContext context, {
     required Widget title,
     bool hasBackButton = false,
+    List<Widget>? actions,
   }) {
     return AppBar(
       centerTitle: false,
       toolbarHeight: Sizes.mqh * .12,
-      actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
+      actions: actions,
       leading: elseNull(
         condition: hasBackButton,
         child: IconButton(
@@ -41,6 +43,7 @@ class MainAppBar {
         ),
       ),
       title: title,
+      titleTextStyle: context.displayLargeText,
     );
   }
 }
