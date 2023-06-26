@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
+import 'package:ecommerce/core/presentation/widgets/horizontal_product_card.dart';
 import 'package:ecommerce/features/home/domain/entities/product.dart';
-import 'package:ecommerce/features/home/presentation/components/horizontal_product_card.dart';
 import 'package:flutter/material.dart';
 
 class HProductsSection extends StatelessWidget {
@@ -59,7 +59,8 @@ class HProductsSection extends StatelessWidget {
                   priceBefore: item.priceBefore!,
                   discountPercentage: item.discountPercentage!,
                   rating: item.rating,
-                  isFavorite: true,
+                  onActionPressed: () {},
+                  onPressed: () {},
                 );
               },
             ),
