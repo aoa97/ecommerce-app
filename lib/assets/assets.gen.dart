@@ -31,8 +31,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/bag-filled.svg
   SvgGenImage get bagFilled => const SvgGenImage('assets/icons/bag-filled.svg');
 
+  /// File path: assets/icons/bag-light.svg
+  SvgGenImage get bagLight => const SvgGenImage('assets/icons/bag-light.svg');
+
   /// File path: assets/icons/bag.svg
   SvgGenImage get bag => const SvgGenImage('assets/icons/bag.svg');
+
+  /// File path: assets/icons/close.svg
+  SvgGenImage get close => const SvgGenImage('assets/icons/close.svg');
 
   /// File path: assets/icons/facebook.svg
   SvgGenImage get facebook => const SvgGenImage('assets/icons/facebook.svg');
@@ -107,7 +113,9 @@ class $AssetsIconsGen {
         backRtl,
         back,
         bagFilled,
+        bagLight,
         bag,
+        close,
         facebook,
         favoriteFilled,
         favorite,

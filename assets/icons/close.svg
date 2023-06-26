@@ -1,0 +1,12 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon/close" clip-path="url(#clip0_20200_4004)">
+<g id="close">
+<path id="Shape" fill-rule="evenodd" clip-rule="evenodd" d="M18 7.2L16.8 6L12 10.8L7.2 6L6 7.2L10.8 12L6 16.8L7.2 18L12 13.2L16.8 18L18 16.8L13.2 12L18 7.2Z" fill="#9B9B9B"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_20200_4004">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>
