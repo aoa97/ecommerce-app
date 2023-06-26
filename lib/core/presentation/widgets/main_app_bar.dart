@@ -3,6 +3,7 @@ import 'package:ecommerce/core/application/service_locator.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/helpers.dart';
+import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -29,11 +30,13 @@ class MainAppBar {
     BuildContext context, {
     required Widget title,
     bool hasBackButton = false,
+    bool centerTitle = false,
     List<Widget>? actions,
+    Color? backgroundColor,
   }) {
     return AppBar(
-      centerTitle: false,
-      toolbarHeight: Sizes.mqh * .12,
+      backgroundColor: backgroundColor ?? Palette.background,
+      toolbarHeight: Sizes.mqh * .10,
       actions: actions,
       leading: elseNull(
         condition: hasBackButton,
@@ -44,6 +47,7 @@ class MainAppBar {
       ),
       title: title,
       titleTextStyle: context.displayLargeText,
+      centerTitle: centerTitle,
     );
   }
 }
