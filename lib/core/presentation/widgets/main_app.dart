@@ -1,13 +1,17 @@
+import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/application/service_locator.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
+import 'package:ecommerce/core/features/locale/presentation/controller/locale_state.dart';
 import 'package:ecommerce/core/features/theme/theme.dart';
 import 'package:ecommerce/core/presentation/models/flavor_config.dart';
 import 'package:ecommerce/core/presentation/router/app_router.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
+import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class MainApp extends StatelessWidget {
   final FlavorConfig flavor;
@@ -28,11 +32,8 @@ class MainApp extends StatelessWidget {
           return ScreenUtilInit(
             designSize: const Size(375, 812),
             minTextAdapt: true,
-            splitScreenMode: true,
             builder: (context, __) => MediaQuery(
-              data: MediaQuery.of(context).copyWith(
-                textScaleFactor: 1.sp,
-              ),
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.sp),
               child: MaterialApp.router(
                 debugShowCheckedModeBanner: flavor.type == Flavor.development,
                 title: flavor.appTitle,
@@ -41,6 +42,13 @@ class MainApp extends StatelessWidget {
                 locale: localeCubit.val,
                 theme: appTheme.light(),
                 routerConfig: appRouter,
+                builder: (context, child) => ModalProgressHUD(
+                  opacity: .6,
+                  color: Palette.black,
+                  progressIndicator: Assets.lottie.loaderTwo.lottie(width: 220.w),
+                  inAsyncCall: localeCubit.state is SwitchLocaleLoadingState,
+                  child: child!,
+                ),
               ),
             ),
           );
