@@ -73,12 +73,18 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logo.svg
   SvgGenImage get logoSvg => const SvgGenImage('assets/icons/logo.svg');
 
+  /// File path: assets/icons/minus.svg
+  SvgGenImage get minus => const SvgGenImage('assets/icons/minus.svg');
+
   /// File path: assets/icons/person-filled.svg
   SvgGenImage get personFilled =>
       const SvgGenImage('assets/icons/person-filled.svg');
 
   /// File path: assets/icons/person.svg
   SvgGenImage get person => const SvgGenImage('assets/icons/person.svg');
+
+  /// File path: assets/icons/plus.svg
+  SvgGenImage get plus => const SvgGenImage('assets/icons/plus.svg');
 
   /// File path: assets/icons/shop-filled.svg
   SvgGenImage get shopFilled =>
@@ -114,8 +120,10 @@ class $AssetsIconsGen {
         logoText,
         logoPng,
         logoSvg,
+        minus,
         personFilled,
         person,
+        plus,
         shopFilled,
         shop,
         starFilled,

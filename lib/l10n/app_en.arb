@@ -11,6 +11,7 @@
 "unexpected_response": "The process didn't complete, an unexpected server error occured, please contact support",
 "@_global": {},
 "tryAgain": "Try Again",
+"egp": "EGP",
 "@_layout": {},
 "home": "Home",
 "shop": "Shop",
@@ -31,5 +32,12 @@
 "password": "Password",
 "@_profile": {},
 "language": "Language",
-"join_message": "Join us and elevate your\nExperience"
+"join_message": "Join us and elevate your\nExperience",
+"@_cart": {},
+"my_cart": "My Cart",
+"checkout": "Checkout",
+"total_amount": "Total Amount",
+"delete": "Delete",
+"save_for_later": "Save for later",
+"discount": "discount"
 }

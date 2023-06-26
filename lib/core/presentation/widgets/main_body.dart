@@ -1,5 +1,5 @@
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainBody extends StatelessWidget {
   final Widget child;
@@ -10,7 +10,7 @@ class MainBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        padding: EdgeInsets.all(Sizes.x16),
+        padding: EdgeInsets.all(16.w),
         child: child,
       ),
     );
