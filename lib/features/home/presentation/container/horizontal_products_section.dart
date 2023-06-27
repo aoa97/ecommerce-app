@@ -1,6 +1,6 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
-import 'package:ecommerce/core/presentation/widgets/horizontal_product_card.dart';
+import 'package:ecommerce/core/presentation/widgets/horizontal_product_list.dart';
 import 'package:ecommerce/features/home/domain/entities/product.dart';
 import 'package:flutter/material.dart';
 
@@ -41,30 +41,7 @@ class HProductsSection extends StatelessWidget {
           Sizes.x2.sph,
           Text(subTitle, style: context.labelSmallText),
           Sizes.x20.sph,
-          SizedBox(
-            height: Sizes.x276,
-            child: ListView.separated(
-              itemCount: items.length,
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              separatorBuilder: (_, __) => Sizes.x12.spw,
-              itemBuilder: (context, index) {
-                final item = items[index];
-
-                return HProductCard(
-                  image: item.image,
-                  name: item.title,
-                  brand: item.brand,
-                  priceAfter: item.price,
-                  priceBefore: item.priceBefore!,
-                  discountPercentage: item.discountPercentage!,
-                  rating: item.rating,
-                  onActionPressed: () {},
-                  onPressed: () {},
-                );
-              },
-            ),
-          ),
+          HProductList(items: items),
         ],
       ),
     );

@@ -39,5 +39,7 @@
 "total_amount": "Total Amount",
 "delete": "Delete",
 "save_for_later": "Save for later",
-"discount": "discount"
+"discount": "discount",
+"@_product": {},
+"add_to_cart": "Add to cart"
 }

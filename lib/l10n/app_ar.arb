@@ -39,5 +39,7 @@
 "total_amount": "المبلغ الإجمالى",
 "delete": "حذف",
 "save_for_later": "حفظ لوقت لاحق",
-"discount": "خصم"
+"discount": "خصم",
+"@_product": {},
+"add_to_cart": "أضف إلى العربة"
 }
