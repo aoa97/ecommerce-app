@@ -92,6 +92,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/icons/plus.svg');
 
+  /// File path: assets/icons/share.svg
+  SvgGenImage get share => const SvgGenImage('assets/icons/share.svg');
+
   /// File path: assets/icons/shop-filled.svg
   SvgGenImage get shopFilled =>
       const SvgGenImage('assets/icons/shop-filled.svg');
@@ -132,6 +135,7 @@ class $AssetsIconsGen {
         personFilled,
         person,
         plus,
+        share,
         shopFilled,
         shop,
         starFilled,

@@ -1,3 +1,5 @@
+import 'package:ecommerce/assets/dummy_data.dart';
+import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/core/presentation/widgets/horizontal_product_card.dart';
 import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/core/presentation/widgets/main_body.dart';
@@ -10,11 +12,13 @@ class FavoritesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final products = DummyData.products;
+
     return Scaffold(
       appBar: MainAppBar.wide(context, title: Text(tr(context).favorites)),
       body: MainBody(
         child: GridView.builder(
-          itemCount: 10,
+          itemCount: products.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 0.67,
@@ -23,13 +27,7 @@ class FavoritesScreen extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             return HProductCard(
-              image: "https://picsum.photos/300",
-              name: "Honor 8X",
-              brand: "Huwaei",
-              priceAfter: 900,
-              priceBefore: 1000,
-              discountPercentage: 10,
-              rating: 4,
+              product: products[index],
               actionType: ProductActionType.cart,
               onActionPressed: () {},
               onPressed: () {},

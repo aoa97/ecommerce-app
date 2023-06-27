@@ -13,8 +13,11 @@ class MainAppBar {
     BuildContext context, {
     required String title,
     bool hasBackButton = false,
+    List<Widget>? actions,
   }) {
     return AppBar(
+      actions: actions,
+      automaticallyImplyLeading: false,
       leading: elseNull(
         condition: hasBackButton,
         child: IconButton(
