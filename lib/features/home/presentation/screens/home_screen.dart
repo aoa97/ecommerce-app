@@ -37,14 +37,14 @@ class HomeScreen extends StatelessWidget {
                       title: "Sale",
                       subTitle: "Super Summer Sale",
                       onViewAll: () {},
-                      items: const [],
+                      items: cubit.saleProducts,
                     ),
                     Sizes.x20.sph,
                     HProductsSection(
                       title: "New",
                       subTitle: "You’ve never seen it before!",
                       onViewAll: () {},
-                      items: const [],
+                      items: cubit.newProducts,
                     ),
                     Sizes.x16.sph,
                   ],
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
             if (state is HomeResourcesRejected) {
               return MainErrorWidget(
                 error: state.errorModel,
-                onRefresh: () {},
+                onRefresh: cubit.fetchResources,
               );
             }
 

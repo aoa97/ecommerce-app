@@ -10,16 +10,24 @@ import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class MainApp extends StatelessWidget {
+class MainApp extends HookWidget {
   final FlavorConfig flavor;
 
   const MainApp({super.key, required this.flavor});
 
   @override
   Widget build(BuildContext context) {
+    useEffect(() {
+      // for (var p in DummyData.products) {
+      //   sl<ApiService>().post("/products.json", data: p.toJson());
+      // }
+      return null;
+    }, []);
+
     return MultiBlocProvider(
       providers: [
         BlocProvider<LocaleCubit>(create: (_) => sl<LocaleCubit>()),
