@@ -3,7 +3,7 @@ import 'package:ecommerce/features/home/data/models/product_model.dart';
 class DummyData {
   static final List<ProductModel> products = [
     const ProductModel(
-      id: 1,
+      id: "1",
       image: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
       title: "iPhone 9",
       brand: "Apple",
@@ -23,7 +23,7 @@ class DummyData {
       stock: 5,
     ),
     const ProductModel(
-      id: 2,
+      id: "2",
       image: "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
       title: "iPhone X",
       brand: "Apple",
@@ -42,10 +42,10 @@ class DummyData {
       stock: 4,
     ),
     const ProductModel(
-      id: 3,
+      id: "3",
       image: "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
       title: "Samsung Universe 9",
-      brand: "Apple",
+      brand: "Samsung",
       price: 1249,
       priceBefore: 1249 + 1249 * 15.46 / 100,
       rating: 4.09,
@@ -55,7 +55,7 @@ class DummyData {
       stock: 5,
     ),
     const ProductModel(
-      id: 4,
+      id: "4",
       image: "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
       title: "OPPOF19",
       brand: "OPPO",
