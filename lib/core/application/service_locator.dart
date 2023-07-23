@@ -4,10 +4,6 @@ import 'package:ecommerce/core/features/locale/data/datasources/locale_local_dat
 import 'package:ecommerce/core/features/locale/data/repos/locale_repository.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/features/theme/theme.dart';
-import 'package:ecommerce/features/home/data/datasources/home_remote_data_source.dart';
-import 'package:ecommerce/features/home/data/repository/home_repository.dart';
-import 'package:ecommerce/features/home/domain/repository/base_home_repository.dart';
-import 'package:ecommerce/features/home/domain/usecases/get_sale_products_use_case.dart';
 import 'package:ecommerce/features/home/presentation/cubit/home_cubit.dart';
 import 'package:get_it/get_it.dart';
 
@@ -28,12 +24,10 @@ class ServiceLocator {
     sl.registerLazySingleton<LocaleCubit>(() => LocaleCubit(localeRepository: sl()));
 
     // Feature -> Home
-    sl.registerLazySingleton<IHomeRemoteDataSource>(() => HomeRemoteDataSource(apiService: sl<ApiService>()));
-    sl.registerLazySingleton<IHomeRepository>(() => HomeRepository(remoteDataSource: sl()));
+    // sl.registerLazySingleton<IHomeRemoteDataSource>(() => HomeRemoteDataSource(apiService: sl<ApiService>()));
+    // sl.registerLazySingleton<IHomeRepository>(() => HomeRepository(remoteDataSource: sl()));
     sl.registerLazySingleton<HomeCubit>(
-      () => HomeCubit(
-        getSaleProductsUseCase: GetSaleProductsUseCase(sl<IHomeRepository>()),
-      ),
+      () => HomeCubit(),
     );
   }
 }

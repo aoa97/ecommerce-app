@@ -1,14 +1,14 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/horizontal_product_list.dart';
-import 'package:ecommerce/features/home/domain/entities/product.dart';
+import 'package:ecommerce/features/home/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class HProductsSection extends StatelessWidget {
   final String title;
   final String subTitle;
   final void Function()? onViewAll;
-  final List<Product> items;
+  final List<ProductModel> items;
 
   const HProductsSection({
     super.key,
