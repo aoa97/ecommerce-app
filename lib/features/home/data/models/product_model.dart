@@ -1,25 +1,34 @@
-import 'package:ecommerce/features/home/domain/entities/product.dart';
+import 'package:equatable/equatable.dart';
 
-class ProductModel extends Product {
+class ProductModel extends Equatable {
+  final int id;
+  final String image;
+  final String title;
+  final String brand;
+  final num rating;
+  final num price;
+  final num? priceBefore;
+  final num? discountPercentage;
+  final List<String>? gallery;
+  final String? description;
+  final int? stock;
+
   const ProductModel({
-    required super.id,
-    required super.image,
-    required super.title,
-    required super.brand,
-    required super.price,
-    required super.rating,
-    required super.discountPercentage,
-    required super.priceBefore,
+    required this.id,
+    required this.image,
+    required this.title,
+    required this.brand,
+    required this.rating,
+    required this.price,
+    this.priceBefore,
+    this.discountPercentage,
+    this.gallery,
+    this.description,
+    this.stock,
   });
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
-        id: json["id"],
-        image: json["thumbnail"],
-        title: json["title"],
-        brand: json["brand"],
-        price: json["price"],
-        rating: json["rating"],
-        discountPercentage: json["discountPercentage"],
-        priceBefore: json["priceBefore"] ?? json["price"] + json["price"] * json["discountPercentage"] / 100,
-      );
+  @override
+  List<Object> get props {
+    return [id, image, title, brand, rating, price];
+  }
 }

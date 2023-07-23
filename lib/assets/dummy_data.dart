@@ -1,8 +1,8 @@
-import 'package:ecommerce/features/home/domain/entities/product.dart';
+import 'package:ecommerce/features/home/data/models/product_model.dart';
 
 class DummyData {
-  static final List<Product> products = [
-    const Product(
+  static final List<ProductModel> products = [
+    const ProductModel(
       id: 1,
       image: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
       title: "iPhone 9",
@@ -22,7 +22,7 @@ class DummyData {
       ],
       stock: 5,
     ),
-    const Product(
+    const ProductModel(
       id: 2,
       image: "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
       title: "iPhone X",
@@ -41,7 +41,7 @@ class DummyData {
       ],
       stock: 4,
     ),
-    const Product(
+    const ProductModel(
       id: 3,
       image: "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
       title: "Samsung Universe 9",
@@ -54,7 +54,7 @@ class DummyData {
       gallery: ["https://i.dummyjson.com/data/products/3/1.jpg"],
       stock: 5,
     ),
-    const Product(
+    const ProductModel(
       id: 4,
       image: "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
       title: "OPPOF19",
