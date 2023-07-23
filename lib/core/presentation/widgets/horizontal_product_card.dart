@@ -7,14 +7,14 @@ import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/main_icon_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_label.dart';
 import 'package:ecommerce/core/presentation/widgets/main_rating.dart';
-import 'package:ecommerce/features/home/domain/entities/product.dart';
+import 'package:ecommerce/features/home/data/models/product_model.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HProductCard extends StatelessWidget {
-  final Product product;
+  final ProductModel product;
   final ProductActionType? actionType;
   final void Function()? onActionPressed;
   final void Function()? onPressed;

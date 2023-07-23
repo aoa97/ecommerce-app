@@ -6,7 +6,7 @@ import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/core/presentation/widgets/main_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_icon_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_rating.dart';
-import 'package:ecommerce/features/home/domain/entities/product.dart';
+import 'package:ecommerce/features/home/data/models/product_model.dart';
 import 'package:ecommerce/features/product/presentation/containers/product_image_carousel.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Product product = DummyData.products.first;
+    final ProductModel product = DummyData.products.first;
 
     return Scaffold(
       appBar: MainAppBar.basic(

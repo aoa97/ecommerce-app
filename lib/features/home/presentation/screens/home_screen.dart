@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                       title: "Sale",
                       subTitle: "Super Summer Sale",
                       onViewAll: () {},
-                      items: state.salesProducts,
+                      items: const [],
                     ),
                     Sizes.x20.sph,
                     HProductsSection(
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
             if (state is HomeResourcesRejected) {
               return MainErrorWidget(
                 error: state.errorModel,
-                onRefresh: cubit.fetchResources,
+                onRefresh: () {},
               );
             }
 
