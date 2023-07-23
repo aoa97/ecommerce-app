@@ -4,12 +4,13 @@ import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/loading_indicator.dart';
 import 'package:ecommerce/core/presentation/widgets/main_error_widget.dart';
-import 'package:ecommerce/core/presentation/widgets/transparent_scaffold.dart';
-import 'package:ecommerce/features/home/presentation/container/horizontal_products_section.dart';
+import 'package:ecommerce/features/home/presentation/containers/home_carousel.dart';
+import 'package:ecommerce/features/home/presentation/containers/horizontal_products_section.dart';
 import 'package:ecommerce/features/home/presentation/cubit/home_cubit.dart';
 import 'package:ecommerce/features/home/presentation/cubit/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reactive_forms/reactive_forms.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,8 +19,27 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<HomeCubit>(
       create: (context) => sl<HomeCubit>(),
-      child: TransparentScaffold(
-        darkIcons: true,
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: context.mqh * .1,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Palette.primary, Palette.secondary],
+              ),
+            ),
+          ),
+          title: ClipRRect(
+            borderRadius: BorderRadius.circular(Sizes.radiusMd),
+            child: ReactiveTextField(
+              formControl: FormControl(),
+              decoration: InputDecoration(
+                prefixIcon: IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+                hintText: "Search Salla",
+              ),
+            ),
+          ),
+        ),
         body: BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
             final cubit = context.read<HomeCubit>();
@@ -28,10 +48,7 @@ class HomeScreen extends StatelessWidget {
               return SingleChildScrollView(
                 child: Column(
                   children: [
-                    Container(
-                      color: Palette.primary,
-                      height: Sizes.x196 + Sizes.statusBarHeight,
-                    ),
+                    const HomeCarousel(),
                     Sizes.x24.sph,
                     HProductsSection(
                       title: "Sale",
