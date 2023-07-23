@@ -38,12 +38,12 @@ class ApiService {
     );
   }
 
-  get({
-    required String endpoint,
+  Future<Response> get(
+    String endpoint, {
     Map<String, dynamic>? params,
     bool? auth = false,
   }) async {
-    return await _dio.get(endpoint, queryParameters: params, options: _setReqOptions(auth: auth));
+    return (await _dio.get(endpoint, queryParameters: params, options: _setReqOptions(auth: auth)));
   }
 
   Future<Response> post(
