@@ -1,5 +1,6 @@
 import 'package:ecommerce/assets/dummy_data.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
+import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/widgets/horizontal_product_list.dart';
 import 'package:ecommerce/core/presentation/widgets/loading_indicator.dart';
 import 'package:ecommerce/core/presentation/widgets/main_error_widget.dart';
@@ -46,7 +47,38 @@ class ProductDetailsBody extends StatelessWidget {
                           MainRating(rating: product.rating),
                         ],
                       ),
-                      Text("${product.price} ${tr(context).egp}", style: context.displayMediumText),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text.rich(
+                            TextSpan(
+                              children: [
+                                if (product.priceBefore != null)
+                                  TextSpan(
+                                    text: "${product.priceBefore!.round()} ${tr(context).egp} ",
+                                    style: context.headlineMediumText!.copyWith(
+                                      color: Palette.grey,
+                                      decoration: TextDecoration.lineThrough,
+                                    ),
+                                  ),
+                                TextSpan(
+                                  text: "${product.price.round()} ${tr(context).egp}",
+                                  style: context.headlineLargeText!.copyWith(
+                                    color: Palette.black,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          if (product.priceBefore != null) ...[
+                            8.h.sph,
+                            Text(
+                              "${product.discountPercentage?.round()}% ${tr(context).discount}",
+                              style: context.labelMediumText!.copyWith(color: Palette.success),
+                            )
+                          ]
+                        ],
+                      ),
                     ],
                   ),
                   12.h.sph,
