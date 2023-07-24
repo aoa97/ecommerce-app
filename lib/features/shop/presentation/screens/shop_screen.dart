@@ -10,7 +10,7 @@ class ShopScreen extends StatelessWidget {
     return Scaffold(
       appBar: MainAppBar.basic(
         context,
-        title: "Categories",
+        title: const Text("Categories"),
       ),
       body: const MainBody(
         child: Column(

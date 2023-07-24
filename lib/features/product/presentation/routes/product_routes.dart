@@ -3,5 +3,5 @@ import 'package:go_router/go_router.dart';
 
 final productRouter = GoRoute(
   path: "/products/:productId",
-  builder: (context, state) => const ProductScreen(),
+  builder: (context, state) => ProductScreen(productId: state.pathParameters['productId']!),
 );
