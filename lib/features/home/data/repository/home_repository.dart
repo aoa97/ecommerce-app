@@ -1,9 +1,9 @@
+import 'package:ecommerce/core/data/models/product_item_model.dart';
 import 'package:ecommerce/features/home/data/datasources/home_remote_datasource.dart';
-import 'package:ecommerce/features/home/data/models/product_model.dart';
 
 abstract class IHomeRepository {
-  Future<List<ProductModel>> getSaleProducts();
-  Future<List<ProductModel>> getNewProducts();
+  Future<List<ProductItemModel>> getSaleProducts();
+  Future<List<ProductItemModel>> getNewProducts();
 }
 
 class HomeRepository implements IHomeRepository {
@@ -12,12 +12,12 @@ class HomeRepository implements IHomeRepository {
   HomeRepository(this._dataSource);
 
   @override
-  Future<List<ProductModel>> getSaleProducts() {
+  Future<List<ProductItemModel>> getSaleProducts() {
     return _dataSource.getSaleProducts();
   }
 
   @override
-  Future<List<ProductModel>> getNewProducts() {
+  Future<List<ProductItemModel>> getNewProducts() {
     return _dataSource.getNewProducts();
   }
 }

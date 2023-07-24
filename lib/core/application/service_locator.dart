@@ -6,7 +6,9 @@ import 'package:ecommerce/core/features/locale/presentation/controller/locale_cu
 import 'package:ecommerce/core/features/theme/theme.dart';
 import 'package:ecommerce/features/home/data/datasources/home_remote_datasource.dart';
 import 'package:ecommerce/features/home/data/repository/home_repository.dart';
-import 'package:ecommerce/features/home/presentation/cubit/home_cubit.dart';
+import 'package:ecommerce/features/home/presentation/controller/home_cubit.dart';
+import 'package:ecommerce/features/product/data/datasources/product_remote_datasource.dart';
+import 'package:ecommerce/features/product/data/repository/product_repository.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -29,5 +31,9 @@ class ServiceLocator {
     sl.registerLazySingleton<IHomeRemoteDataSource>(() => HomeRemoteDataSource(sl<ApiService>()));
     sl.registerLazySingleton<IHomeRepository>(() => HomeRepository(sl<IHomeRemoteDataSource>()));
     sl.registerLazySingleton<HomeCubit>(() => HomeCubit(repository: sl<IHomeRepository>()));
+
+    // Feature -> Product
+    sl.registerLazySingleton<IProductRemoteDataSource>(() => ProductRemoteDataSource(sl<ApiService>()));
+    sl.registerLazySingleton<IProductRepository>(() => ProductRepository(sl<IProductRemoteDataSource>()));
   }
 }
