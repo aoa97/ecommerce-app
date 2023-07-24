@@ -18,7 +18,7 @@ class HProductList extends StatelessWidget {
     }
 
     return SizedBox(
-      height: 260.h,
+      height: 267.h,
       child: ListView.separated(
         itemCount: items.length,
         scrollDirection: Axis.horizontal,

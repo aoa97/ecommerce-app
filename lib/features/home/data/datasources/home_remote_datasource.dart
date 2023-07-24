@@ -12,10 +12,9 @@ class HomeRemoteDataSource implements IHomeRemoteDataSource {
 
   HomeRemoteDataSource(this._apiService);
 
-  @override
-  Future<List<ProductModel>> getSaleProducts() async {
+  Future<List<ProductModel>> _fetchProducts(String endpoint) async {
     try {
-      final Map<String, dynamic> data = (await _apiService.get("/products.json")).data;
+      final data = (await _apiService.get(endpoint)).data;
       final List<ProductModel> products = [...data.entries.map((e) => ProductModel.fromJson(e.value, id: e.key))];
       return products;
     } catch (e) {
@@ -24,13 +23,12 @@ class HomeRemoteDataSource implements IHomeRemoteDataSource {
   }
 
   @override
+  Future<List<ProductModel>> getSaleProducts() async {
+    return _fetchProducts('/products.json?orderBy="discountPercentage"&startAt=0&limitToFirst=4');
+  }
+
+  @override
   Future<List<ProductModel>> getNewProducts() async {
-    try {
-      final Map<String, dynamic> data = (await _apiService.get("/products.json")).data;
-      final List<ProductModel> products = [...data.entries.map((e) => ProductModel.fromJson(e.value, id: e.key))];
-      return products;
-    } catch (e) {
-      throw ErrorModel.parse(e);
-    }
+    return _fetchProducts('/products.json?orderBy="discountPercentage"&limitToFirst=4');
   }
 }

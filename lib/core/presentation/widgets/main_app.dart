@@ -21,12 +21,12 @@ class MainApp extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    useEffect(() {
-      // for (var p in DummyData.products) {
-      //   sl<ApiService>().post("/products.json", data: p.toJson());
-      // }
-      return null;
-    }, []);
+    // useEffect(() {
+    //   for (var p in DummyData.products) {
+    //     sl<ApiService>().post("/products.json", data: p.toJson());
+    //   }
+    //   return null;
+    // }, []);
 
     return MultiBlocProvider(
       providers: [

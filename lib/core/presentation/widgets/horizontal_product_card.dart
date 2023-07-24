@@ -61,14 +61,14 @@ class HProductCard extends StatelessWidget {
                   child: Image.network(
                     product.image,
                     height: Sizes.x184,
-                    fit: BoxFit.cover,
                   ),
                 ),
-                Positioned(
-                  top: Sizes.x8,
-                  left: Sizes.x8,
-                  child: MainChip(label: "-${product.discountPercentage?.round()}%", color: Palette.success),
-                ),
+                if (product.priceBefore != null)
+                  Positioned(
+                    top: Sizes.x8,
+                    left: Sizes.x8,
+                    child: MainChip(label: "-${product.discountPercentage?.round()}%", color: Palette.success),
+                  ),
                 if (onClose != null)
                   Positioned(
                     top: Sizes.x8,
@@ -102,16 +102,21 @@ class HProductCard extends StatelessWidget {
             Text.rich(
               TextSpan(
                 children: [
-                  TextSpan(
-                    text: "${product.priceBefore!.round()} ${tr(context).egp}",
-                    style: context.labelSmallText!.copyWith(
-                      color: Palette.grey,
-                      decoration: TextDecoration.lineThrough,
+                  if (product.priceBefore != null)
+                    TextSpan(
+                      text: "${product.priceBefore!.round()} ${tr(context).egp} ",
+                      style: context.labelSmallText!.copyWith(
+                        color: Palette.grey,
+                        decoration: TextDecoration.lineThrough,
+                        fontSize: 12.sp,
+                      ),
                     ),
-                  ),
                   TextSpan(
-                    text: " ${product.price.round()} ${tr(context).egp}",
-                    style: context.headlineSmallText!.copyWith(color: Palette.success),
+                    text: "${product.price.round()} ${tr(context).egp}",
+                    style: context.headlineSmallText!.copyWith(
+                      color: Palette.success,
+                      fontSize: 12.sp,
+                    ),
                   ),
                 ],
               ),
