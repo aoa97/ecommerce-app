@@ -12,6 +12,7 @@ class ProductModel extends Equatable {
   final List<String>? gallery;
   final String? description;
   final int? stock;
+  final DateTime? createdAt;
 
   const ProductModel({
     required this.id,
@@ -25,6 +26,7 @@ class ProductModel extends Equatable {
     this.gallery,
     this.description,
     this.stock,
+    this.createdAt,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json, {String? id}) {
@@ -40,6 +42,7 @@ class ProductModel extends Equatable {
       gallery: json['gallery'] != null ? List<String>.from(json['gallery']) : null,
       description: json['description'],
       stock: json['stock'],
+      createdAt: json['createdAt'],
     );
   }
 
