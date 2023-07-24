@@ -15,7 +15,7 @@ class ProductImageCarousel extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: images.length,
         separatorBuilder: (c, i) => 4.w.spw,
-        itemBuilder: (c, i) => SizedBox(width: 275.w, child: Image.network(images[i], fit: BoxFit.cover)),
+        itemBuilder: (c, i) => SizedBox(width: 275.w, child: Image.network(images[i])),
       ),
     );
   }

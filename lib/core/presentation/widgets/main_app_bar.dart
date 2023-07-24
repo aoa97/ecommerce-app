@@ -11,7 +11,7 @@ import 'package:go_router/go_router.dart';
 class MainAppBar {
   static basic(
     BuildContext context, {
-    required String title,
+    Widget? title,
     bool hasBackButton = false,
     List<Widget>? actions,
   }) {
@@ -25,7 +25,7 @@ class MainAppBar {
           icon: sl<LocaleCubit>().isArabic ? Assets.icons.backRtl.svg() : Assets.icons.back.svg(),
         ),
       ),
-      title: Text(title),
+      title: title,
     );
   }
 
