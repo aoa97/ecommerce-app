@@ -1,35 +1,44 @@
 import 'package:ecommerce/core/data/interfaces/base_product_model.dart';
 
-class ProductDetailsModel extends IProductModel {
-  final List<String>? gallery;
+class CartProductModel extends IProductModel {
+  final String image;
   final String description;
-  final num rating;
+  final int qty;
 
-  const ProductDetailsModel({
+  const CartProductModel({
     required super.id,
     required super.title,
     required super.brand,
-    required this.rating,
     required super.price,
     required super.priceBefore,
     required super.discountPercentage,
     required super.stock,
-    required this.gallery,
+    required this.image,
     required this.description,
+    required this.qty,
   });
 
-  factory ProductDetailsModel.fromJson(Map<String, dynamic> json, {String? id}) {
-    return ProductDetailsModel(
-      id: id ?? json['id'],
+  factory CartProductModel.fromJson(Map<String, dynamic> json) {
+    return CartProductModel(
+      id: json['id'],
       title: json['title'],
       brand: json['brand'],
-      rating: json['rating'],
       price: json['price'],
       priceBefore: json['priceBefore'],
       discountPercentage: json['discountPercentage'],
       stock: json['stock'],
       description: json['description'],
-      gallery: json['gallery'] != null ? List<String>.from(json['gallery']) : null,
+      image: json['image'],
+      qty: json['qty'],
     );
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {
+      ...super.toJson(),
+      'image': image,
+      'qty': qty,
+    };
   }
 }
