@@ -40,9 +40,9 @@ class ProductDetailsBody extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(product.title, style: context.displayMediumText),
+                          Text(product.title, style: context.displaySmallText),
                           4.h.sph,
-                          Text(product.brand, style: context.labelLargeText),
+                          Text(product.brand, style: context.labelMediumText),
                           8.h.sph,
                           MainRating(rating: product.rating),
                         ],
@@ -56,14 +56,14 @@ class ProductDetailsBody extends StatelessWidget {
                                 if (product.priceBefore != null)
                                   TextSpan(
                                     text: "${product.priceBefore!.round()} ${tr(context).egp} ",
-                                    style: context.headlineMediumText!.copyWith(
+                                    style: context.headlineSmallText!.copyWith(
                                       color: Palette.grey,
                                       decoration: TextDecoration.lineThrough,
                                     ),
                                   ),
                                 TextSpan(
                                   text: "${product.price.round()} ${tr(context).egp}",
-                                  style: context.headlineLargeText!.copyWith(
+                                  style: context.headlineMediumText!.copyWith(
                                     color: Palette.black,
                                   ),
                                 ),

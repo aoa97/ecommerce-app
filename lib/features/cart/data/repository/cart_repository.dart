@@ -2,8 +2,8 @@ import 'package:ecommerce/features/cart/data/datasources/cart_local_datasource.d
 import 'package:ecommerce/features/cart/data/models/cart_product_model.dart';
 
 abstract class ICartRepository {
-  Future<void> storeCartProduct(CartProductModel product);
-  Future<List<CartProductModel>> getCartItems();
+  Future<void> storeItem(CartProductModel product);
+  List<CartProductModel> get items;
 }
 
 class CartRepository implements ICartRepository {
@@ -12,12 +12,10 @@ class CartRepository implements ICartRepository {
   CartRepository(this.dataSource);
 
   @override
-  Future<void> storeCartProduct(CartProductModel product) {
-    return dataSource.storeCartProduct(product);
+  Future<void> storeItem(CartProductModel product) {
+    return dataSource.storeItem(product);
   }
 
   @override
-  Future<List<CartProductModel>> getCartItems() {
-    return dataSource.getCartItems();
-  }
+  List<CartProductModel> get items => dataSource.items;
 }

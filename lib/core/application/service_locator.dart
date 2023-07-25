@@ -40,8 +40,8 @@ class ServiceLocator {
     sl.registerLazySingleton<IProductRepository>(() => ProductRepository(sl<IProductRemoteDataSource>()));
 
     // Feature -> Cart
-    sl.registerLazySingleton<ICartLocalDataSource>(() => CartLocalDataSource());
-    sl.registerLazySingleton<ICartRepository>(() => CartRepository(sl<ICartLocalDataSource>()));
-    sl.registerLazySingleton<CartCubit>(() => CartCubit(repository: sl<ICartRepository>()));
+    sl.registerSingleton<ICartLocalDataSource>(CartLocalDataSource());
+    sl.registerSingleton<ICartRepository>(CartRepository(sl<ICartLocalDataSource>()));
+    sl.registerSingleton<CartCubit>(CartCubit(repository: sl<ICartRepository>()));
   }
 }

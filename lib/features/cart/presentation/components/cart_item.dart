@@ -2,32 +2,20 @@ import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/reactive_fields/reactive_counter.dart';
+import 'package:ecommerce/features/cart/data/models/cart_product_model.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class CartItem extends StatelessWidget {
-  final String imageUri;
-  final String brand;
-  final String title;
-  final num price;
-  final num? priceBefore;
-  final num? discountPercentage;
-  final int stock;
-
+  final CartProductModel item;
   final void Function() onDeletePressed;
   final void Function() onSavePressed;
 
   const CartItem({
     super.key,
-    required this.imageUri,
-    required this.brand,
-    required this.title,
-    required this.price,
-    this.priceBefore,
-    this.discountPercentage,
-    required this.stock,
+    required this.item,
     required this.onDeletePressed,
     required this.onSavePressed,
   });
@@ -53,12 +41,16 @@ class CartItem extends StatelessWidget {
                   SizedBox(
                     height: 104.h,
                     width: double.infinity,
-                    child: Image.network(imageUri, fit: BoxFit.cover),
+                    child: Image.network(
+                      item.image!,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => const SizedBox(),
+                    ),
                   ),
                   const Spacer(),
                   ReactiveCounter(
-                    formControl: FormControl(value: 1),
-                    maxValue: stock,
+                    formControl: FormControl(value: item.qty),
+                    maxValue: item.stock,
                     mainAxisAlignment: MainAxisAlignment.center,
                   ),
                 ],
@@ -72,29 +64,34 @@ class CartItem extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(brand, style: context.labelSmallText),
+                    Text(item.brand, style: context.labelSmallText),
                     4.h.sph,
-                    Text(title, maxLines: 2, overflow: TextOverflow.ellipsis, style: context.headlineSmallText),
+                    Text(
+                      item.description,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: context.headlineSmallText,
+                    ),
                     8.h.sph,
                     Text(
-                      "$price ${tr(context).egp}",
+                      "${item.price} ${tr(context).egp}",
                       style: context.headlineMediumText!,
                     ),
-                    if (priceBefore != null || discountPercentage != null) 8.h.sph,
+                    if (item.priceBefore != null || item.discountPercentage != null) 8.h.sph,
                     Text.rich(
                       TextSpan(
                         children: [
-                          if (priceBefore != null)
+                          if (item.priceBefore != null)
                             TextSpan(
-                              text: "$priceBefore ${tr(context).egp}",
+                              text: "${item.priceBefore} ${tr(context).egp}",
                               style: context.labelSmallText!.copyWith(
                                 color: Palette.grey,
                                 decoration: TextDecoration.lineThrough,
                               ),
                             ),
-                          if (discountPercentage != null)
+                          if (item.discountPercentage != null)
                             TextSpan(
-                              text: " $discountPercentage% ${tr(context).discount}",
+                              text: " ${item.discountPercentage}% ${tr(context).discount}",
                               style: context.labelSmallText!.copyWith(color: Palette.success),
                             )
                         ],

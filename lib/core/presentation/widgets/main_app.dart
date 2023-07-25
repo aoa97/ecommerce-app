@@ -7,6 +7,7 @@ import 'package:ecommerce/core/presentation/models/flavor_config.dart';
 import 'package:ecommerce/core/presentation/router/app_router.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
+import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,16 +22,10 @@ class MainApp extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // useEffect(() {
-    //   for (var p in DummyData.products) {
-    //     sl<ApiService>().post("/products.json", data: p.toJson());
-    //   }
-    //   return null;
-    // }, []);
-
     return MultiBlocProvider(
       providers: [
         BlocProvider<LocaleCubit>(create: (_) => sl<LocaleCubit>()),
+        BlocProvider<CartCubit>(create: (_) => sl<CartCubit>()),
       ],
       child: Builder(
         builder: (context) {

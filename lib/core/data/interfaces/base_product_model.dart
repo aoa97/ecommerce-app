@@ -7,7 +7,7 @@ abstract class IProductModel extends Equatable {
   final num price;
   final num? priceBefore;
   final num? discountPercentage;
-  final int? stock;
+  final int stock;
 
   const IProductModel({
     required this.id,

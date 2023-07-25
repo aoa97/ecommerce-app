@@ -4,7 +4,6 @@ import 'package:ecommerce/features/cart/presentation/containers/cart_summary.dar
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
-// TODO:  Save Cart Items Locally via Hive NoSql DB
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
 

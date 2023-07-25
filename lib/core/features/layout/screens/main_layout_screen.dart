@@ -1,8 +1,10 @@
 import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
+import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -30,7 +32,14 @@ class MainLayoutScreen extends HookWidget {
         path: "/shop",
       ),
       (
-        icon: Assets.icons.bag.svg(width: Sizes.x28),
+        icon: Builder(builder: (context) {
+          final count = context.select((CartCubit cart) => cart.items!.length);
+          return Badge(
+            label: Text(count.toString()),
+            isLabelVisible: count > 0,
+            child: Assets.icons.bag.svg(width: Sizes.x28),
+          );
+        }),
         activeIcon: Assets.icons.bagFilled.svg(width: Sizes.x28),
         label: tr(context).cart,
         path: "/bag",

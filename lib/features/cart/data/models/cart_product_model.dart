@@ -14,19 +14,19 @@ class CartProductModel extends HiveObject {
   String brand;
 
   @HiveField(3)
-  double price;
+  num price;
 
   @HiveField(4)
-  double priceBefore;
+  num? priceBefore;
 
   @HiveField(5)
-  double discountPercentage;
+  num? discountPercentage;
 
   @HiveField(6)
   int stock;
 
   @HiveField(7)
-  String image;
+  String? image;
 
   @HiveField(8)
   String description;
