@@ -6,11 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class ReactiveCounter extends ReactiveFormField<int, int> {
+  final void Function(int)? onChanged;
+
   ReactiveCounter({
     super.key,
     super.formControl,
     int? maxValue,
     MainAxisAlignment? mainAxisAlignment,
+    this.onChanged,
   }) : super(
           builder: (field) => Builder(
             builder: (context) {
@@ -23,7 +26,12 @@ class ReactiveCounter extends ReactiveFormField<int, int> {
                       disabled: field.value == 1,
                       icon: Assets.icons.minus.svg(),
                       iconSize: 20.w,
-                      onPressed: () => field.control.value = field.value! - 1,
+                      onPressed: () {
+                        field.control.value = field.value! - 1;
+                        if (onChanged != null) {
+                          onChanged(field.value!);
+                        }
+                      },
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.h),
@@ -33,7 +41,12 @@ class ReactiveCounter extends ReactiveFormField<int, int> {
                       disabled: maxValue != null ? field.value == maxValue : false,
                       icon: Assets.icons.plus.svg(),
                       iconSize: 20.w,
-                      onPressed: () => field.control.value = field.value! + 1,
+                      onPressed: () {
+                        field.control.value = field.value! + 1;
+                        if (onChanged != null) {
+                          onChanged(field.value!);
+                        }
+                      },
                     ),
                   ],
                 ),

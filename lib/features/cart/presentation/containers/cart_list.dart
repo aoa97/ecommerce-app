@@ -24,11 +24,7 @@ class CartList extends StatelessWidget {
           padding: EdgeInsets.all(16.w),
           itemCount: items.length,
           separatorBuilder: (_, __) => 24.h.sph,
-          itemBuilder: (context, index) => CartItem(
-            item: items[index],
-            onDeletePressed: () {},
-            onSavePressed: () {},
-          ),
+          itemBuilder: (context, index) => CartItem(item: items[index]),
         );
       },
     );

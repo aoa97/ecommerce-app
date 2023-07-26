@@ -5,7 +5,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 abstract class ICartLocalDataSource {
   List<CartProductModel> get items;
   Future<void> storeItem(CartProductModel product);
-  Future<void> deleteItem(String id);
 }
 
 class CartLocalDataSource implements ICartLocalDataSource {
@@ -29,11 +28,5 @@ class CartLocalDataSource implements ICartLocalDataSource {
     } catch (e) {
       throw UnexpectedErrorModel();
     }
-  }
-
-  @override
-  Future<void> deleteItem(String id) {
-    // TODO: implement deleteItem
-    throw UnimplementedError();
   }
 }
