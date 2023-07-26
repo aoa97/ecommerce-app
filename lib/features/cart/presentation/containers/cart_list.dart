@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
-import 'package:ecommerce/core/presentation/widgets/loading_indicator.dart';
+import 'package:ecommerce/features/cart/data/models/cart_product_model.dart';
 import 'package:ecommerce/features/cart/presentation/components/cart_item.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_state.dart';
@@ -12,32 +12,22 @@ class CartList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<CartCubit>();
-
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
-        if (state is CartResourcesFulfilled) {
-          final items = cubit.items;
+        final List<CartProductModel> items = context.read<CartCubit>().items;
 
-          if (items!.isEmpty) {
-            return const Center(child: Text("Your Cart List is Empty"));
-          }
-
-          return ListView.separated(
-            padding: EdgeInsets.all(16.w),
-            itemCount: items.length,
-            separatorBuilder: (_, __) => 24.h.sph,
-            itemBuilder: (context, index) => CartItem(
-              item: items[index],
-              onDeletePressed: () {},
-              onSavePressed: () {},
-            ),
-          );
+        if (items.isEmpty) {
+          return const Center(child: Text("Your Cart List is Empty"));
         }
 
-        return const SafeArea(
-          child: Center(
-            child: LoadingIndicator(),
+        return ListView.separated(
+          padding: EdgeInsets.all(16.w),
+          itemCount: items.length,
+          separatorBuilder: (_, __) => 24.h.sph,
+          itemBuilder: (context, index) => CartItem(
+            item: items[index],
+            onDeletePressed: () {},
+            onSavePressed: () {},
           ),
         );
       },

@@ -33,7 +33,8 @@ class MainLayoutScreen extends HookWidget {
       ),
       (
         icon: Builder(builder: (context) {
-          final count = context.select((CartCubit cart) => cart.items!.length);
+          final count = context.select((CartCubit cart) => cart.cartCount);
+
           return Badge(
             label: Text(count.toString()),
             isLabelVisible: count > 0,
