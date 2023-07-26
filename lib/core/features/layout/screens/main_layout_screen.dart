@@ -38,6 +38,7 @@ class MainLayoutScreen extends HookWidget {
           return Badge(
             label: Text(count.toString()),
             isLabelVisible: count > 0,
+            backgroundColor: Palette.primary,
             child: Assets.icons.bag.svg(width: Sizes.x28),
           );
         }),
