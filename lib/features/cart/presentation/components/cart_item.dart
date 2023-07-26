@@ -1,3 +1,4 @@
+import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
@@ -8,7 +9,6 @@ import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:print_color/print_color.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class CartItem extends StatelessWidget {
@@ -20,8 +20,30 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final cubit = context.read<CartCubit>();
 
-    return GestureDetector(
-      onHorizontalDragEnd: (details) => Print.green("H Drag"),
+    return Dismissible(
+      key: ValueKey(item.productId),
+      onDismissed: (dir) {
+        if (dir == DismissDirection.startToEnd) {
+          () {}; // deleteItem & moveToFavorites
+        } else if (dir == DismissDirection.endToStart) {
+          cubit.deleteItem(item);
+        }
+      },
+      background: Container(
+        color: Palette.grey.withOpacity(.5),
+        alignment: AlignmentDirectional.centerStart,
+        padding: const EdgeInsetsDirectional.only(start: 20),
+        child: Assets.icons.favoriteFilled.svg(
+          width: 22,
+          colorFilter: const ColorFilter.mode(Palette.white, BlendMode.srcIn),
+        ),
+      ),
+      secondaryBackground: Container(
+        alignment: AlignmentDirectional.centerEnd,
+        padding: const EdgeInsetsDirectional.only(end: 20),
+        color: Palette.error,
+        child: const Icon(Icons.delete, color: Palette.white, size: 25),
+      ),
       child: Container(
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
