@@ -1,6 +1,10 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
+import 'package:ecommerce/features/cart/data/models/cart_product_model.dart';
 import 'package:ecommerce/features/cart/presentation/components/cart_item.dart';
+import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
+import 'package:ecommerce/features/cart/presentation/controller/cart_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartList extends StatelessWidget {
@@ -8,21 +12,21 @@ class CartList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: EdgeInsets.all(16.w),
-      itemCount: 5,
-      separatorBuilder: (_, __) => 24.h.sph,
-      itemBuilder: (_, index) => CartItem(
-        imageUri: "https://picsum.photos/150",
-        brand: "Xiaomi",
-        title: "Redmi Watch 2 Lite 5ATM, Water Resistant, GPS, Black, Gamda, Gedan Gedan Gedan Gedan",
-        price: 900,
-        priceBefore: 1000,
-        discountPercentage: 10,
-        stock: 4,
-        onDeletePressed: () {},
-        onSavePressed: () {},
-      ),
+    return BlocBuilder<CartCubit, CartState>(
+      builder: (context, state) {
+        final List<CartProductModel> items = context.read<CartCubit>().items;
+
+        if (items.isEmpty) {
+          return const Center(child: Text("Your Cart List is Empty"));
+        }
+
+        return ListView.separated(
+          padding: EdgeInsets.all(16.w),
+          itemCount: items.length,
+          separatorBuilder: (_, __) => 24.h.sph,
+          itemBuilder: (context, index) => CartItem(item: items[index]),
+        );
+      },
     );
   }
 }

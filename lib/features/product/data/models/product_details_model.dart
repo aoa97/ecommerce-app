@@ -3,12 +3,13 @@ import 'package:ecommerce/core/data/interfaces/base_product_model.dart';
 class ProductDetailsModel extends IProductModel {
   final List<String>? gallery;
   final String description;
+  final num rating;
 
   const ProductDetailsModel({
     required super.id,
     required super.title,
     required super.brand,
-    required super.rating,
+    required this.rating,
     required super.price,
     required super.priceBefore,
     required super.discountPercentage,
@@ -30,14 +31,5 @@ class ProductDetailsModel extends IProductModel {
       description: json['description'],
       gallery: json['gallery'] != null ? List<String>.from(json['gallery']) : null,
     );
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      ...super.toJson(),
-      'description': description,
-      'gallery': gallery,
-    };
   }
 }

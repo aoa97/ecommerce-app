@@ -4,6 +4,9 @@ import 'package:ecommerce/core/features/locale/data/datasources/locale_local_dat
 import 'package:ecommerce/core/features/locale/data/repos/locale_repository.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/features/theme/theme.dart';
+import 'package:ecommerce/features/cart/data/datasources/cart_local_datasource.dart';
+import 'package:ecommerce/features/cart/data/repository/cart_repository.dart';
+import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/features/home/data/datasources/home_remote_datasource.dart';
 import 'package:ecommerce/features/home/data/repository/home_repository.dart';
 import 'package:ecommerce/features/home/presentation/controller/home_cubit.dart';
@@ -35,5 +38,10 @@ class ServiceLocator {
     // Feature -> Product
     sl.registerLazySingleton<IProductRemoteDataSource>(() => ProductRemoteDataSource(sl<ApiService>()));
     sl.registerLazySingleton<IProductRepository>(() => ProductRepository(sl<IProductRemoteDataSource>()));
+
+    // Feature -> Cart
+    sl.registerSingleton<ICartLocalDataSource>(CartLocalDataSource());
+    sl.registerSingleton<ICartRepository>(CartRepository(sl<ICartLocalDataSource>()));
+    sl.registerSingleton<CartCubit>(CartCubit(repository: sl<ICartRepository>()));
   }
 }
