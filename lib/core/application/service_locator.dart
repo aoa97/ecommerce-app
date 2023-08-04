@@ -7,6 +7,9 @@ import 'package:ecommerce/core/features/theme/theme.dart';
 import 'package:ecommerce/features/cart/data/datasources/cart_local_datasource.dart';
 import 'package:ecommerce/features/cart/data/repository/cart_repository.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
+import 'package:ecommerce/features/favorites/data/datasources/favorites_local_datasource.dart';
+import 'package:ecommerce/features/favorites/data/repository/favorites_repository.dart';
+import 'package:ecommerce/features/favorites/presentation/controller/favorites_cubit.dart';
 import 'package:ecommerce/features/home/data/datasources/home_remote_datasource.dart';
 import 'package:ecommerce/features/home/data/repository/home_repository.dart';
 import 'package:ecommerce/features/home/presentation/controller/home_cubit.dart';
@@ -43,5 +46,10 @@ class ServiceLocator {
     sl.registerSingleton<ICartLocalDataSource>(CartLocalDataSource());
     sl.registerSingleton<ICartRepository>(CartRepository(sl<ICartLocalDataSource>()));
     sl.registerSingleton<CartCubit>(CartCubit(repository: sl<ICartRepository>()));
+
+    // Feature -> Favorites
+    sl.registerSingleton<IFavoritesLocalDataSource>(FavoritesLocalDataSource());
+    sl.registerSingleton<IFavoritesRepository>(FavoritesRepository(sl<IFavoritesLocalDataSource>()));
+    sl.registerSingleton<FavoritesCubit>(FavoritesCubit(repository: sl<IFavoritesRepository>()));
   }
 }

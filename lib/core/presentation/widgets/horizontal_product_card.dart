@@ -7,14 +7,20 @@ import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/main_icon_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_label.dart';
 import 'package:ecommerce/core/presentation/widgets/main_rating.dart';
-import 'package:ecommerce/core/data/models/product_item_model.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HProductCard extends StatelessWidget {
-  final ProductItemModel product;
+  final String title;
+  final String brand;
+  final String image;
+  final num rating;
+  final num price;
+  final num? priceBefore;
+  final num? discountPercentage;
+  final bool? isActiveAction;
   final ProductActionType? actionType;
   final void Function()? onActionPressed;
   final void Function()? onPressed;
@@ -26,7 +32,14 @@ class HProductCard extends StatelessWidget {
     this.onActionPressed,
     this.onPressed,
     this.onClose,
-    required this.product,
+    required this.title,
+    required this.brand,
+    required this.image,
+    required this.rating,
+    required this.price,
+    this.priceBefore,
+    this.discountPercentage,
+    this.isActiveAction,
   });
 
   _buildAction() {
@@ -59,15 +72,15 @@ class HProductCard extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(Sizes.radiusMd),
                   child: Image.network(
-                    product.image,
+                    image,
                     height: Sizes.x184,
                   ),
                 ),
-                if (product.priceBefore != null)
+                if (priceBefore != null)
                   Positioned(
                     top: Sizes.x8,
                     left: Sizes.x8,
-                    child: MainChip(label: "-${product.discountPercentage?.round()}%", color: Palette.success),
+                    child: MainChip(label: "-${discountPercentage?.round()}%", color: Palette.success),
                   ),
                 if (onClose != null)
                   Positioned(
@@ -88,13 +101,13 @@ class HProductCard extends StatelessWidget {
               ],
             ),
             Sizes.x8.sph,
-            MainRating(rating: product.rating),
+            MainRating(rating: rating),
             1.w.spw,
             4.h.sph,
-            Text(product.brand, style: context.labelSmallText),
+            Text(brand, style: context.labelSmallText),
             4.h.sph,
             Text(
-              product.title,
+              title,
               style: context.headlineSmallText,
               overflow: TextOverflow.ellipsis,
             ),
@@ -102,9 +115,9 @@ class HProductCard extends StatelessWidget {
             Text.rich(
               TextSpan(
                 children: [
-                  if (product.priceBefore != null)
+                  if (priceBefore != null)
                     TextSpan(
-                      text: "${product.priceBefore!.round()} ${tr(context).egp} ",
+                      text: "${priceBefore!.round()} ${tr(context).egp} ",
                       style: context.labelSmallText!.copyWith(
                         color: Palette.grey,
                         decoration: TextDecoration.lineThrough,
@@ -112,7 +125,7 @@ class HProductCard extends StatelessWidget {
                       ),
                     ),
                   TextSpan(
-                    text: "${product.price.round()} ${tr(context).egp}",
+                    text: "${price.round()} ${tr(context).egp}",
                     style: context.headlineSmallText!.copyWith(
                       color: Palette.success,
                       fontSize: 12.sp,

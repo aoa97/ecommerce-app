@@ -8,6 +8,7 @@ import 'package:ecommerce/core/presentation/router/app_router.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
+import 'package:ecommerce/features/favorites/presentation/controller/favorites_cubit.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,6 +27,7 @@ class MainApp extends HookWidget {
       providers: [
         BlocProvider<LocaleCubit>(create: (_) => sl<LocaleCubit>()),
         BlocProvider<CartCubit>(create: (_) => sl<CartCubit>()),
+        BlocProvider<FavoritesCubit>(create: (_) => sl<FavoritesCubit>()),
       ],
       child: Builder(
         builder: (context) {
