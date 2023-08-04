@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/data/interfaces/base_product_model.dart';
 
 class ProductItemModel extends IProductModel {
-  final String image;
+  final String? image;
   final num rating;
 
   const ProductItemModel({
