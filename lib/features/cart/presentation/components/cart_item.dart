@@ -60,9 +60,10 @@ class CartItem extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    Container(
                       height: 104.h,
                       width: double.infinity,
+                      padding: EdgeInsets.all(5.w),
                       child: Image.network(
                         item.image!,
                         errorBuilder: (context, error, stackTrace) => const SizedBox(),

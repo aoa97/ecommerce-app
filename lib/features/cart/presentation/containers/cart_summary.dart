@@ -19,7 +19,7 @@ class CartSummary extends StatelessWidget {
       children: [
         ListTile(
           trailing: Text(
-            "${cubit.count} منتجات",
+            "${cubit.count} ${tr(context).products}",
             style: context.headlineLargeText!.copyWith(color: Palette.grey),
           ),
           title: Text(

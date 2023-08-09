@@ -106,6 +106,10 @@ class $AssetsIconsGen {
   SvgGenImage get starFilled =>
       const SvgGenImage('assets/icons/star-filled.svg');
 
+  /// File path: assets/icons/star-halfed.svg
+  SvgGenImage get starHalfed =>
+      const SvgGenImage('assets/icons/star-halfed.svg');
+
   /// File path: assets/icons/star.svg
   SvgGenImage get star => const SvgGenImage('assets/icons/star.svg');
 
@@ -139,6 +143,7 @@ class $AssetsIconsGen {
         shopFilled,
         shop,
         starFilled,
+        starHalfed,
         star
       ];
 }

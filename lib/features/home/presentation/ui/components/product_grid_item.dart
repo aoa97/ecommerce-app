@@ -6,6 +6,7 @@ import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class ProductGridItem extends StatelessWidget {
   const ProductGridItem({super.key, required this.item});
@@ -15,6 +16,9 @@ class ProductGridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () {
+        context.push("/products/${item.id}");
+      },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
         decoration: BoxDecoration(
@@ -32,9 +36,19 @@ class ProductGridItem extends StatelessWidget {
             16.sph,
             Text(item.title, style: context.bodyMediumText),
             4.sph,
-            Text(
-              "${item.price} ${tr(context).egp}",
-              style: context.headlineSmallText!.copyWith(color: Palette.black),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "${item.price} ${tr(context).egp}",
+                  style: context.labelSmallText!.copyWith(color: Palette.black),
+                ),
+                if (item.discountPercentage != null)
+                  Text(
+                    "-${item.discountPercentage} %",
+                    style: context.bodySmallText!.copyWith(color: Palette.success, fontWeight: FontWeight.w500),
+                  ),
+              ],
             ),
             8.sph,
             Row(

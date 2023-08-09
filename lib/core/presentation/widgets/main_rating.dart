@@ -10,6 +10,7 @@ class MainRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RatingBar(
+      allowHalfRating: true,
       itemSize: 13,
       ignoreGestures: true,
       itemPadding: const EdgeInsets.symmetric(horizontal: 1),
@@ -18,7 +19,7 @@ class MainRating extends StatelessWidget {
       itemCount: 5,
       ratingWidget: RatingWidget(
         full: Assets.icons.starFilled.svg(),
-        half: Assets.icons.starFilled.svg(),
+        half: Assets.icons.starHalfed.svg(),
         empty: Assets.icons.star.svg(),
       ),
       onRatingUpdate: (rating) {},

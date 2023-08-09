@@ -1,8 +1,7 @@
-import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/application/service_locator.dart';
+import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/core/presentation/widgets/main_button.dart';
-import 'package:ecommerce/core/presentation/widgets/main_icon_button.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/features/product/data/repository/product_repository.dart';
 import 'package:ecommerce/features/product/presentation/containers/product_details_body.dart';
@@ -26,19 +25,8 @@ class ProductScreen extends StatelessWidget {
         cartCubit: sl<CartCubit>(),
       ),
       child: Scaffold(
-        appBar: MainAppBar.basic(
-          context,
-          title: Builder(builder: _buildAppBarTitle),
-          hasBackButton: true,
-          actions: [
-            MainIconButton(
-              fillColor: Colors.transparent,
-              padding: EdgeInsets.all(16.h),
-              icon: Assets.icons.share.svg(),
-              onPressed: () {},
-            )
-          ],
-        ),
+        backgroundColor: Palette.white,
+        appBar: MainAppBar.basic(context, hasBackButton: true, title: Builder(builder: _buildAppBarTitle)),
         body: const ProductDetailsBody(),
         bottomNavigationBar: Builder(builder: _buildAddToCart),
       ),
