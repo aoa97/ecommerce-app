@@ -24,7 +24,7 @@ class FavoritesCubit extends Cubit<FavoritesState> {
   }
 
   void deleteItem(FavoritesProductModel item) {
-    item.delete(); // Credits to HiveObject :)
+    item.delete();
     refreshFavorites();
   }
 }

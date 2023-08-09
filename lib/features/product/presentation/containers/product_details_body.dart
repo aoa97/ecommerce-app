@@ -1,7 +1,5 @@
-import 'package:ecommerce/assets/dummy_data.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/widgets/horizontal_product_list.dart';
 import 'package:ecommerce/core/presentation/widgets/loading_indicator.dart';
 import 'package:ecommerce/core/presentation/widgets/main_error_widget.dart';
 import 'package:ecommerce/core/presentation/widgets/main_rating.dart';
@@ -90,7 +88,6 @@ class ProductDetailsBody extends StatelessWidget {
                   16.h.sph,
                   Text("You can also like this", style: context.headlineMediumText),
                   12.h.sph,
-                  HProductList(items: DummyData.products)
                 ],
               ),
             ),

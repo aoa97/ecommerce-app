@@ -14,7 +14,7 @@ class MainSocialButton extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: Palette.white,
-        borderRadius: BorderRadius.circular(Sizes.radiusLg),
+        borderRadius: BorderRadius.circular(Sizes.radiusXl),
         boxShadow: const [BoxShadow(offset: Offset(0, 1), blurRadius: 8, color: Color.fromRGBO(0, 0, 0, 0.05))],
       ),
       child: Material(

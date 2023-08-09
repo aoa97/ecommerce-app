@@ -21,7 +21,7 @@ class MainChip extends StatelessWidget {
       height: Sizes.x24,
       decoration: BoxDecoration(
         color: color ?? Palette.primary,
-        borderRadius: BorderRadius.circular(Sizes.radiusLg),
+        borderRadius: BorderRadius.circular(Sizes.radiusXl),
       ),
       child: Center(
         child: Text(

@@ -33,5 +33,6 @@ abstract class Sizes {
   // Radius
   static double radius = 4;
   static double radiusMd = 8;
-  static double radiusLg = 24;
+  static double radiusLg = 16;
+  static double radiusXl = 24;
 }
