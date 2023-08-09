@@ -3,6 +3,7 @@ import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class ShippingAddressSection extends StatelessWidget {
   const ShippingAddressSection({super.key});
@@ -28,7 +29,12 @@ class ShippingAddressSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("John Doe", style: context.headlineSmallText),
-                  TextButton(onPressed: () {}, child: const Text("Change")),
+                  TextButton(
+                    onPressed: () {
+                      context.push("/addresses");
+                    },
+                    child: const Text("Change"),
+                  ),
                 ],
               ),
               7.sph,
