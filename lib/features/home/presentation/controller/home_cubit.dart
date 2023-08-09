@@ -6,8 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final IHomeRepository _repository;
-  List<ProductItemModel> saleProducts = [];
-  List<ProductItemModel> newProducts = [];
+  List<ProductItemModel> products = [];
 
   HomeCubit({required IHomeRepository repository})
       : _repository = repository,
@@ -19,8 +18,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(HomeResourcesPending());
     try {
       await Future.wait([
-        _repository.getSaleProducts().then((value) => saleProducts = value),
-        _repository.getNewProducts().then((value) => newProducts = value),
+        _repository.getProducts().then((value) => products = value),
       ]);
       emit(HomeResourcesFulfilled());
     } on ErrorModel catch (e) {

@@ -3,8 +3,7 @@ import 'package:ecommerce/core/application/api_service/error/error_model.dart';
 import 'package:ecommerce/core/data/models/product_item_model.dart';
 
 abstract class IHomeRemoteDataSource {
-  Future<List<ProductItemModel>> getNewProducts();
-  Future<List<ProductItemModel>> getSaleProducts();
+  Future<List<ProductItemModel>> getProducts();
 }
 
 class HomeRemoteDataSource implements IHomeRemoteDataSource {
@@ -25,12 +24,9 @@ class HomeRemoteDataSource implements IHomeRemoteDataSource {
   }
 
   @override
-  Future<List<ProductItemModel>> getSaleProducts() async {
-    return _fetchProducts('/products.json?orderBy="discountPercentage"&startAt=0&limitToFirst=4');
-  }
-
-  @override
-  Future<List<ProductItemModel>> getNewProducts() async {
-    return _fetchProducts('/products.json?orderBy="discountPercentage"&limitToFirst=4');
+  Future<List<ProductItemModel>> getProducts() async {
+    return _fetchProducts('/products.json');
   }
 }
+
+// '/products.json?orderBy="discountPercentage"&limitToFirst=4'

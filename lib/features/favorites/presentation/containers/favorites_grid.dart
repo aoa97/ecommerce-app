@@ -1,5 +1,3 @@
-import 'package:ecommerce/core/presentation/utils/enums.dart';
-import 'package:ecommerce/core/presentation/widgets/horizontal_product_card.dart';
 import 'package:ecommerce/features/favorites/presentation/controller/favorites_cubit.dart';
 import 'package:ecommerce/features/favorites/presentation/controller/favorites_state.dart';
 import 'package:flutter/material.dart';
@@ -30,22 +28,7 @@ class FavoritesGrid extends StatelessWidget {
           itemBuilder: (context, index) {
             final item = cubit.items[index];
 
-            return HProductCard(
-              key: ValueKey(item.productId),
-              title: item.title,
-              brand: item.brand,
-              image: item.image!,
-              rating: 22,
-              price: item.price,
-              priceBefore: item.priceBefore,
-              discountPercentage: item.discountPercentage,
-              actionType: ProductActionType.cart,
-              onActionPressed: () {},
-              onPressed: () {},
-              onClose: () {
-                cubit.deleteItem(item);
-              },
-            );
+            return const SizedBox();
           },
         );
       },
