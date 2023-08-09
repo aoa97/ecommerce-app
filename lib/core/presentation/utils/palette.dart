@@ -12,4 +12,5 @@ class Palette {
 
   static const shadow = BoxShadow(color: Color(0x14000000), blurRadius: 24, offset: Offset(0, 4));
   static const shadow2 = BoxShadow(color: Color(0x19000000), blurRadius: 8, offset: Offset(0, 4));
+  static const shadow3 = BoxShadow(color: Color(0x14000000), blurRadius: 25, offset: Offset(0, 1));
 }

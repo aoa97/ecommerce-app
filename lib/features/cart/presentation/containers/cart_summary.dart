@@ -1,11 +1,11 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/widgets/main_button.dart';
+import 'package:ecommerce/core/presentation/widgets/summary_section.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class CartSummary extends StatelessWidget {
   const CartSummary({super.key});
@@ -14,9 +14,12 @@ class CartSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     final cubit = context.watch<CartCubit>();
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
+    return SummarySection(
+      submitLabel: tr(context).checkout,
+      onSubmit: () {
+        context.push("/checkout");
+      },
+      tiles: [
         ListTile(
           trailing: Text(
             "${cubit.count} ${tr(context).products}",
@@ -25,13 +28,6 @@ class CartSummary extends StatelessWidget {
           title: Text(
             "${cubit.totalPrice} ${tr(context).egp}",
             style: context.headlineLargeText,
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(16.w, 8.w, 16.w, 20.w),
-          child: MainButton(
-            label: tr(context).checkout,
-            onPressed: () {},
           ),
         )
       ],
