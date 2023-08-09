@@ -14,45 +14,47 @@ class ProductGridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
-      decoration: BoxDecoration(
-        color: Palette.white,
-        borderRadius: BorderRadius.circular(Sizes.radiusLg),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Center(
-              child: Image.network(item.image!),
+    return InkWell(
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
+        decoration: BoxDecoration(
+          color: Palette.white,
+          borderRadius: BorderRadius.circular(Sizes.radiusLg),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Center(
+                child: Image.network(item.image!),
+              ),
             ),
-          ),
-          16.sph,
-          Text(item.title, style: context.bodyMediumText),
-          4.sph,
-          Text(
-            "${item.price} ${tr(context).egp}",
-            style: context.headlineSmallText!.copyWith(color: Palette.black),
-          ),
-          8.sph,
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Assets.icons.starFilled.svg(width: 12.w),
-              3.spw,
-              Text(
-                item.rating.toString(),
-                style: context.bodySmallText!,
-              ),
-              const Spacer(),
-              InkWell(
-                onTap: () {},
-                child: Assets.icons.heart.svg(width: 18.w),
-              ),
-            ],
-          ),
-        ],
+            16.sph,
+            Text(item.title, style: context.bodyMediumText),
+            4.sph,
+            Text(
+              "${item.price} ${tr(context).egp}",
+              style: context.headlineSmallText!.copyWith(color: Palette.black),
+            ),
+            8.sph,
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Assets.icons.starFilled.svg(width: 12.w),
+                3.spw,
+                Text(
+                  item.rating.toString(),
+                  style: context.bodySmallText!,
+                ),
+                const Spacer(),
+                InkWell(
+                  onTap: () {},
+                  child: Assets.icons.heart.svg(width: 18.w),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

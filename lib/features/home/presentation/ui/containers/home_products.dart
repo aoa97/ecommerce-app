@@ -12,36 +12,34 @@ class HomeProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
-      child: BlocBuilder<HomeCubit, HomeState>(
-        builder: (context, state) {
-          final cubit = context.read<HomeCubit>();
-          final products = cubit.products;
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        final cubit = context.read<HomeCubit>();
+        final products = cubit.products;
 
-          if (state is HomeResourcesFulfilled) {
-            return GridView.builder(
-              padding: EdgeInsets.fromLTRB(20.h, 20.h, 20.h, 10.h),
-              itemCount: products.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15.h,
-                mainAxisSpacing: 15.h,
-                childAspectRatio: .8,
-              ),
-              itemBuilder: (context, index) => ProductGridItem(item: products[index]),
-            );
-          }
+        if (state is HomeResourcesFulfilled) {
+          return GridView.builder(
+            padding: EdgeInsets.fromLTRB(20.h, 20.h, 20.h, 10.h),
+            itemCount: products.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 15.h,
+              mainAxisSpacing: 15.h,
+              childAspectRatio: .8,
+            ),
+            itemBuilder: (context, index) => ProductGridItem(item: products[index]),
+          );
+        }
 
-          if (state is HomeResourcesRejected) {
-            return MainErrorWidget(
-              error: state.errorModel,
-              onRefresh: cubit.fetchResources,
-            );
-          }
+        if (state is HomeResourcesRejected) {
+          return MainErrorWidget(
+            error: state.errorModel,
+            onRefresh: cubit.fetchResources,
+          );
+        }
 
-          return const Center(child: LoadingIndicator());
-        },
-      ),
+        return const Center(child: LoadingIndicator());
+      },
     );
   }
 }

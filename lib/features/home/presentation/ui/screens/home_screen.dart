@@ -16,22 +16,23 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider<HomeCubit>(
       create: (context) => sl<HomeCubit>(),
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: context.mqh * .1,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Palette.primary, Palette.secondary],
+        body: NestedScrollView(
+          headerSliverBuilder: (context, _) => [
+            SliverAppBar(
+              pinned: true,
+              toolbarHeight: context.mqh * .1,
+              flexibleSpace: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(colors: [Palette.primary, Palette.secondary]),
+                ),
               ),
+              title: const HomeSearchBar(),
             ),
-          ),
-          title: const HomeSearchBar(),
-        ),
-        body: const CustomScrollView(
-          slivers: [
-            HomeCarousel(),
-            HomeProducts(),
+            const SliverToBoxAdapter(
+              child: HomeCarousel(),
+            ),
           ],
+          body: const HomeProducts(),
         ),
       ),
     );

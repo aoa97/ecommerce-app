@@ -32,43 +32,41 @@ class HomeCarousel extends HookWidget {
       return timer.cancel;
     });
 
-    return SliverToBoxAdapter(
-      child: SizedBox(
-        height: Sizes.mqh * .2,
-        width: double.infinity,
-        child: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            PageView(
-              controller: page,
-              children: [
-                ...carouselImages.map(
-                  (image) => CachedNetworkImage(
-                    imageUrl: image,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    placeholder: (context, url) => Container(color: Palette.black.withOpacity(.9)),
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
-                  ),
-                )
-              ],
-            ),
-            Positioned(
-              bottom: 10,
-              child: Wrap(
-                spacing: 8.w,
-                children: List.generate(
-                  carouselImages.length,
-                  (index) => Container(
-                    color: index == currentPage.value ? Palette.primary : Palette.grey,
-                    width: 18.w,
-                    height: 3.h,
-                  ),
+    return SizedBox(
+      height: Sizes.mqh * .2,
+      width: double.infinity,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          PageView(
+            controller: page,
+            children: [
+              ...carouselImages.map(
+                (image) => CachedNetworkImage(
+                  imageUrl: image,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  placeholder: (context, url) => Container(color: Palette.black.withOpacity(.9)),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                ),
+              )
+            ],
+          ),
+          Positioned(
+            bottom: 10,
+            child: Wrap(
+              spacing: 8.w,
+              children: List.generate(
+                carouselImages.length,
+                (index) => Container(
+                  color: index == currentPage.value ? Palette.primary : Palette.grey,
+                  width: 18.w,
+                  height: 3.h,
                 ),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
