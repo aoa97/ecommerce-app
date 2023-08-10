@@ -4,6 +4,7 @@ import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/core/presentation/widgets/shipping_address_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class AddressesScreen extends StatelessWidget {
   const AddressesScreen({super.key});
@@ -27,7 +28,9 @@ class AddressesScreen extends StatelessWidget {
         separatorBuilder: (_, __) => 24.sph,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          context.push("/addresses/create");
+        },
         backgroundColor: Palette.black,
         foregroundColor: Palette.white,
         child: const Icon(Icons.add),
