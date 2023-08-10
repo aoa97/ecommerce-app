@@ -1,8 +1,6 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
-import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
+import 'package:ecommerce/core/presentation/widgets/shipping_address_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class ShippingAddressSection extends StatelessWidget {
@@ -15,35 +13,11 @@ class ShippingAddressSection extends StatelessWidget {
       children: [
         Text("Shipping Address", style: context.headlineSmallText!.copyWith(fontSize: 16)),
         20.sph,
-        Container(
-          padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 23.w),
-          decoration: BoxDecoration(
-            color: Palette.white,
-            boxShadow: const [Palette.shadow3],
-            borderRadius: BorderRadius.circular(Sizes.radiusMd),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("John Doe", style: context.headlineSmallText),
-                  TextButton(
-                    onPressed: () {
-                      context.push("/addresses");
-                    },
-                    child: const Text("Change"),
-                  ),
-                ],
-              ),
-              7.sph,
-              const Text(
-                "3 Newbridge Court\nChino Hills, CA 91709, United States",
-                style: TextStyle(height: 1.5),
-              ),
-            ],
-          ),
+        ShippingAddressCard(
+          fullName: "John Doe",
+          address: "3 Newbridge Court\nChino Hills, CA 91709, United States",
+          actionLabel: "Change",
+          onAction: () => context.push("/addresses"),
         ),
       ],
     );
