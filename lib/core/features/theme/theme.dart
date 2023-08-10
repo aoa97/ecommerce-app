@@ -66,6 +66,11 @@ class AppTheme {
         border: InputBorder.none,
         labelStyle: TextStyle(color: Palette.grey),
       ),
+      checkboxTheme: const CheckboxThemeData(
+        fillColor: MaterialStatePropertyAll(Palette.black),
+        side: BorderSide(color: Palette.grey, width: 2),
+        visualDensity: VisualDensity(horizontal: -4, vertical: -4),
+      ),
       textTheme: TextTheme(
         displayLarge: _baseTextStyle(fontWeight: FontWeight.w700, fontSize: 34.sp),
         displayMedium: _baseTextStyle(fontWeight: FontWeight.w600, fontSize: 24.sp),

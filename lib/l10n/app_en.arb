@@ -12,6 +12,8 @@
 "@_global": {},
 "tryAgain": "Try Again",
 "egp": "EGP",
+"edit": "Edit",
+"change": "Change",
 "@_layout": {},
 "home": "Home",
 "shop": "Shop",
@@ -42,5 +44,16 @@
 "discount": "discount",
 "products": "Product(s)",
 "@_product": {},
-"add_to_cart": "Add to cart"
+"add_to_cart": "Add to cart",
+"@_addresses": {},
+"shipping_addresses": "Shipping Addresses",
+"add_shipping_address": "Adding Shipping Address",
+"use_address": "Use as the shipping address",
+"save_address": "Save Address",
+"full_name": "Full Name",
+"phone": "Phone",
+"address": "Address",
+"governorate": "Governorate",
+"district": "District",
+"nearest_land_mark": "Nearest Land Mark"
 }
