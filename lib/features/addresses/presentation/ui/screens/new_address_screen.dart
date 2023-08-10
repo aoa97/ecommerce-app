@@ -14,7 +14,7 @@ class NewAddresScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar.basic(context, hasBackButton: true, title: const Text("Adding Shipping Address")),
+      appBar: MainAppBar.basic(context, hasBackButton: true, title: Text(tr(context).add_shipping_address)),
       body: Padding(
         padding: EdgeInsets.all(20.h),
         child: SeparatedColumn(

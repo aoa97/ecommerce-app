@@ -13,7 +13,7 @@ class AddressesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar.basic(context, hasBackButton: true, title: const Text("Shipping Addresses")),
+      appBar: MainAppBar.basic(context, hasBackButton: true, title: Text(tr(context).shipping_addresses)),
       body: ListView.separated(
         padding: EdgeInsets.all(20.h),
         itemCount: 3,
