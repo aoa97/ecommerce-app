@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
+import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reactive_forms/reactive_forms.dart';
@@ -54,7 +55,7 @@ class ShippingAddressCard extends StatelessWidget {
               children: [
                 ReactiveCheckbox(formControl: FormControl()),
                 10.w.spw,
-                const Text("Use as the shipping address"),
+                Text(tr(context).use_address),
               ],
             )
           ]

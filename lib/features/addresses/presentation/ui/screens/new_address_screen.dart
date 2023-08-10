@@ -22,31 +22,31 @@ class NewAddresScreen extends StatelessWidget {
           children: [
             MainTextField(
               formControl: FormControl(),
-              label: tr(context).name,
+              label: tr(context).full_name,
             ),
             MainTextField(
               formControl: FormControl(),
-              label: tr(context).name,
+              label: tr(context).phone,
             ),
             MainTextField(
               formControl: FormControl(),
-              label: tr(context).name,
+              label: tr(context).address,
             ),
             MainTextField(
               formControl: FormControl(),
-              label: tr(context).name,
+              label: tr(context).governorate,
             ),
             MainTextField(
               formControl: FormControl(),
-              label: tr(context).name,
+              label: tr(context).district,
             ),
             MainTextField(
               formControl: FormControl(),
-              label: tr(context).name,
+              label: tr(context).nearest_land_mark,
             ),
             const Spacer(),
             MainButton(
-              label: "Save Address",
+              label: tr(context).save_address,
               onPressed: () {},
             )
           ],
