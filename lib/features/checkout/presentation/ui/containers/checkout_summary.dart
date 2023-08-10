@@ -9,19 +9,19 @@ class CheckoutSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SummarySection(
-      submitLabel: "Submit Order",
+      submitLabel: tr(context).submit_order,
       onSubmit: () {},
       tiles: [
         ListTile(
-          title: const Text("Order"),
+          title: Text(tr(context).order),
           trailing: Text("250000 ${tr(context).egp}"),
         ),
         ListTile(
-          title: const Text("Delivery"),
+          title: Text(tr(context).delivery),
           trailing: Text("250000 ${tr(context).egp}"),
         ),
         ListTile(
-          title: Text("Summary", style: context.labelLargeText!.copyWith(fontWeight: FontWeight.w500)),
+          title: Text(tr(context).total, style: context.labelLargeText!.copyWith(fontWeight: FontWeight.w500)),
           trailing: Text("250000 ${tr(context).egp}", style: context.headlineMediumText!.copyWith(fontSize: 18)),
         ),
       ],

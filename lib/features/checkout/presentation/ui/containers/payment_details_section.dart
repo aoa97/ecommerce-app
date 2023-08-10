@@ -13,7 +13,7 @@ class PaymentDetailsSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Payment", style: context.headlineSmallText!.copyWith(fontSize: 16)),
+            Text(tr(context).payment, style: context.headlineSmallText!.copyWith(fontSize: 16)),
             TextButton(onPressed: () {}, child: Text(tr(context).change)),
           ],
         ),

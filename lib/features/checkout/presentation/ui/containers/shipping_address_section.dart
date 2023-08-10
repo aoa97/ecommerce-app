@@ -12,7 +12,7 @@ class ShippingAddressSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Shipping Address", style: context.headlineSmallText!.copyWith(fontSize: 16)),
+        Text(tr(context).shipping_address, style: context.headlineSmallText!.copyWith(fontSize: 16)),
         20.sph,
         ShippingAddressCard(
           fullName: "John Doe",
