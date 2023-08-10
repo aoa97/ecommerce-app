@@ -12,6 +12,8 @@
 "@_global": {},
 "tryAgain": "إعادة المحاولة",
 "egp": "ج.م",
+"edit": "حفظ",
+"change": "تغيير",
 "@_layout": {},
 "home": "الرئيسية",
 "shop": "المتجر",
@@ -42,5 +44,16 @@
 "discount": "خصم",
 "products": "منتج",
 "@_product": {},
-"add_to_cart": "أضف إلى العربة"
+"add_to_cart": "أضف إلى العربة",
+"@_addresses": {},
+"shipping_addresses": "العناوين",
+"add_shipping_address": "إضافة عنوان جديد",
+"use_address": "استخدام كعنوان رئيسى",
+"save_address": "حفظ",
+"full_name": "الإسم بالكامل",
+"phone": "رقم الهاتف",
+"address": "العنوان",
+"governorate": "المحافظة",
+"district": "الحى",
+"nearest_land_mark": "اقرب علامة"
 }
