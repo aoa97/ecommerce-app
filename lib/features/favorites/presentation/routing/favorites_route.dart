@@ -4,5 +4,5 @@ import 'package:go_router/go_router.dart';
 
 final favoritesRoute = GoRoute(
   path: FavoritesScreen.path,
-  pageBuilder: (context, state) => PageBuilders.slideHorizontal(state: state, child: const FavoritesScreen()),
+  pageBuilder: (context, state) => PageBuilders.fade(state: state, child: const FavoritesScreen()),
 );

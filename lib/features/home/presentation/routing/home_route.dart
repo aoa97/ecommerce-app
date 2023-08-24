@@ -4,5 +4,5 @@ import 'package:go_router/go_router.dart';
 
 final homeRoute = GoRoute(
   path: HomeScreen.path,
-  pageBuilder: (context, state) => PageBuilders.slideHorizontal(state: state, child: const HomeScreen()),
+  pageBuilder: (context, state) => PageBuilders.fade(state: state, child: const HomeScreen()),
 );

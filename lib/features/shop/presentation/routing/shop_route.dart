@@ -4,5 +4,5 @@ import 'package:go_router/go_router.dart';
 
 final shopRoute = GoRoute(
   path: ShopScreen.path,
-  pageBuilder: (context, state) => PageBuilders.slideHorizontal(state: state, child: const ShopScreen()),
+  pageBuilder: (context, state) => PageBuilders.fade(state: state, child: const ShopScreen()),
 );

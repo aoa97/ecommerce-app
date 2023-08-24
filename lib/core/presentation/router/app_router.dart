@@ -14,8 +14,8 @@ final appRouter = GoRouter(
   initialLocation: HomeScreen.path,
   routes: [
     mainLayoutRoute,
-    authRoute,
     productRoute,
+    authRoute,
     checkoutRoute,
     addressesRoute,
   ],

@@ -2,6 +2,11 @@ import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
+import 'package:ecommerce/features/cart/presentation/ui/screens/cart_screen.dart';
+import 'package:ecommerce/features/favorites/presentation/ui/screens/favorites_screen.dart';
+import 'package:ecommerce/features/home/presentation/ui/screens/home_screen.dart';
+import 'package:ecommerce/features/profile/presentation/screens/profile_screen.dart';
+import 'package:ecommerce/features/shop/presentation/ui/screens/shop_screen.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,13 +28,13 @@ class MainLayoutScreen extends HookWidget {
         icon: Assets.icons.home.svg(width: Sizes.x28),
         activeIcon: Assets.icons.homeFilled.svg(width: Sizes.x28),
         label: tr(context).home,
-        path: "/"
+        path: HomeScreen.path
       ),
       (
         icon: Assets.icons.shop.svg(width: Sizes.x28),
         activeIcon: Assets.icons.shopFilled.svg(width: Sizes.x28),
         label: tr(context).shop,
-        path: "/shop",
+        path: ShopScreen.path,
       ),
       (
         icon: Builder(builder: (context) {
@@ -44,19 +49,19 @@ class MainLayoutScreen extends HookWidget {
         }),
         activeIcon: Assets.icons.bagFilled.svg(width: Sizes.x28),
         label: tr(context).cart,
-        path: "/bag",
+        path: CartScreen.path,
       ),
       (
         icon: Assets.icons.heart.svg(width: Sizes.x28),
         activeIcon: Assets.icons.heartFilled.svg(width: Sizes.x28),
         label: tr(context).favorites,
-        path: "/favorites",
+        path: FavoritesScreen.path,
       ),
       (
         icon: Assets.icons.person.svg(width: Sizes.x28),
         activeIcon: Assets.icons.personFilled.svg(width: Sizes.x28),
         label: tr(context).profile,
-        path: "/profile",
+        path: ProfileScreen.path,
       ),
     ];
 
