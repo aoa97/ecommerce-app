@@ -6,7 +6,6 @@ import 'package:ecommerce/features/cart/presentation/ui/screens/cart_screen.dart
 import 'package:ecommerce/features/favorites/presentation/ui/screens/favorites_screen.dart';
 import 'package:ecommerce/features/home/presentation/ui/screens/home_screen.dart';
 import 'package:ecommerce/features/profile/presentation/screens/profile_screen.dart';
-import 'package:ecommerce/features/shop/presentation/ui/screens/shop_screen.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,12 +29,12 @@ class MainLayoutScreen extends HookWidget {
         label: tr(context).home,
         path: HomeScreen.path
       ),
-      (
-        icon: Assets.icons.shop.svg(width: Sizes.x28),
-        activeIcon: Assets.icons.shopFilled.svg(width: Sizes.x28),
-        label: tr(context).shop,
-        path: ShopScreen.path,
-      ),
+      // (
+      //   icon: Assets.icons.shop.svg(width: Sizes.x28),
+      //   activeIcon: Assets.icons.shopFilled.svg(width: Sizes.x28),
+      //   label: tr(context).shop,
+      //   path: ShopScreen.path,
+      // ),
       (
         icon: Builder(builder: (context) {
           final count = context.select((CartCubit cart) => cart.count);
