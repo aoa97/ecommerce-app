@@ -87,7 +87,11 @@ class AuthScreen extends HookWidget {
             Sizes.x24.sph,
             TextButton(
               onPressed: () {
-                context.go(isLogin ? registerPath : loginPath);
+                if (isLogin) {
+                  context.pushReplacement(registerPath);
+                } else {
+                  context.pushReplacement(loginPath);
+                }
               },
               child: Text.rich(
                 TextSpan(
