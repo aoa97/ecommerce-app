@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class PageBuilders {
+abstract class PageBuilders {
   static Page<CustomTransitionPage> slideHorizontal({
     required GoRouterState state,
     required Widget child,
@@ -36,6 +36,25 @@ class PageBuilders {
         var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         return SlideTransition(
           position: animation.drive(tween),
+          child: FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+        );
+      },
+    );
+  }
+
+  static Page<CustomTransitionPage> fade({
+    required GoRouterState state,
+    required Widget child,
+  }) {
+    return CustomTransitionPage(
+      key: state.pageKey,
+      child: child,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return FadeTransition(
+          opacity: animation,
           child: child,
         );
       },

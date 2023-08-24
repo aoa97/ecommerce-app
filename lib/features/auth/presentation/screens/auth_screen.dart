@@ -6,6 +6,7 @@ import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/main_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_social_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_text_field.dart';
+import 'package:ecommerce/features/home/presentation/ui/screens/home_screen.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -13,6 +14,9 @@ import 'package:go_router/go_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class AuthScreen extends HookWidget {
+  static const loginPath = "/auth";
+  static const registerPath = "/register";
+
   final Auth authType;
 
   const AuthScreen({super.key, required this.authType});
@@ -75,7 +79,7 @@ class AuthScreen extends HookWidget {
             MainButton(
               onPressed: () {
                 // TODO: Temp
-                context.go("/");
+                context.go(HomeScreen.path);
               },
               loading: false,
               label: isLogin ? tr(context).login : tr(context).register,
@@ -83,7 +87,11 @@ class AuthScreen extends HookWidget {
             Sizes.x24.sph,
             TextButton(
               onPressed: () {
-                context.go(isLogin ? "/register" : "/auth");
+                if (isLogin) {
+                  context.pushReplacement(registerPath);
+                } else {
+                  context.pushReplacement(loginPath);
+                }
               },
               child: Text.rich(
                 TextSpan(

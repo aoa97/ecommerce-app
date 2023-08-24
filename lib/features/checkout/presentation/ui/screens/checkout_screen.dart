@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CheckoutScreen extends StatelessWidget {
+  static const path = "/checkout";
+
   const CheckoutScreen({super.key});
 
   @override

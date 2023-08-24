@@ -8,8 +8,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:separated_column/separated_column.dart';
 
-class NewAddresScreen extends StatelessWidget {
-  const NewAddresScreen({super.key});
+class NewAddressScreen extends StatelessWidget {
+  static const relativePath = "create";
+  static const path = "/addresses/create";
+
+  const NewAddressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

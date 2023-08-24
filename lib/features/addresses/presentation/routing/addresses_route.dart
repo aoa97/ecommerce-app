@@ -4,15 +4,15 @@ import 'package:ecommerce/features/addresses/presentation/ui/screens/addresses_s
 import 'package:ecommerce/features/addresses/presentation/ui/screens/new_address_screen.dart';
 import 'package:go_router/go_router.dart';
 
-final addressesRouter = GoRoute(
+final addressesRoute = GoRoute(
   parentNavigatorKey: appRouteNavigatorKey,
-  path: "/addresses",
+  path: AddressesScreen.path,
   pageBuilder: (context, state) => PageBuilders.slideVertical(state: state, child: const AddressesScreen()),
   routes: [
     GoRoute(
       parentNavigatorKey: appRouteNavigatorKey,
-      path: "create",
-      pageBuilder: (context, state) => PageBuilders.slideVertical(state: state, child: const NewAddresScreen()),
+      path: NewAddressScreen.relativePath,
+      pageBuilder: (context, state) => PageBuilders.slideVertical(state: state, child: const NewAddressScreen()),
     )
   ],
 );
