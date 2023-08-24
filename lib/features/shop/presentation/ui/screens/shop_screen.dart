@@ -3,6 +3,8 @@ import 'package:ecommerce/core/presentation/widgets/main_body.dart';
 import 'package:flutter/material.dart';
 
 class ShopScreen extends StatelessWidget {
+  static const path = "/layout/shop";
+
   const ShopScreen({super.key});
 
   @override

@@ -3,6 +3,7 @@ import 'package:ecommerce/core/data/models/product_item_model.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
+import 'package:ecommerce/features/product/presentation/screens/product_screen.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +18,7 @@ class ProductGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.push("/products/${item.id}");
+        context.push("${ProductScreen.path}/${item.id}");
       },
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),

@@ -2,6 +2,7 @@ import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/widgets/summary_section.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
+import 'package:ecommerce/features/checkout/presentation/ui/screens/checkout_screen.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +18,7 @@ class CartSummary extends StatelessWidget {
     return SummarySection(
       submitLabel: tr(context).checkout,
       onSubmit: () {
-        context.push("/checkout");
+        context.push(CheckoutScreen.path);
       },
       tiles: [
         ListTile(

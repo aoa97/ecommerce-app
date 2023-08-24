@@ -1,8 +1,8 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/features/cart/data/models/cart_product_model.dart';
-import 'package:ecommerce/features/cart/presentation/components/cart_item.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_state.dart';
+import 'package:ecommerce/features/cart/presentation/ui/components/cart_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -7,12 +7,15 @@ import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/core/presentation/widgets/main_body.dart';
+import 'package:ecommerce/features/auth/presentation/screens/auth_screen.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class ProfileScreen extends StatelessWidget {
+  static const path = "/layout/profile";
+
   const ProfileScreen({super.key});
 
   @override
@@ -37,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
             16.h.sph,
             ElevatedButton(
               onPressed: () {
-                context.push("/auth");
+                context.push(AuthScreen.loginPath);
               },
               style: ElevatedButton.styleFrom(
                 elevation: 0,
@@ -49,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
             12.h.sph,
             OutlinedButton(
               onPressed: () {
-                context.push("/register");
+                context.push(AuthScreen.registerPath);
               },
               style: OutlinedButton.styleFrom(
                 elevation: 0,

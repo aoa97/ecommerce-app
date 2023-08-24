@@ -12,6 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductScreen extends StatelessWidget {
+  static const path = "/product"; // + /:id
   final String productId;
 
   const ProductScreen({super.key, required this.productId});

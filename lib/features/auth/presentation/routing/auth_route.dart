@@ -4,7 +4,7 @@ import 'package:ecommerce/features/auth/presentation/layouts/auth_layout.dart';
 import 'package:ecommerce/features/auth/presentation/screens/auth_screen.dart';
 import 'package:go_router/go_router.dart';
 
-final authRouter = StatefulShellRoute(
+final authRoute = StatefulShellRoute(
   builder: (context, state, navigator) => navigator,
   navigatorContainerBuilder: (context, navigator, children) => AuthLayoutView(
     navigator: navigator,
@@ -14,7 +14,7 @@ final authRouter = StatefulShellRoute(
     StatefulShellBranch(
       routes: [
         GoRoute(
-          path: '/auth',
+          path: AuthScreen.loginPath,
           // redirect: HomeRedirect(),
           pageBuilder: (context, state) => PageBuilders.slideVertical(
             state: state,
@@ -22,7 +22,7 @@ final authRouter = StatefulShellRoute(
           ),
         ),
         GoRoute(
-          path: '/register',
+          path: AuthScreen.registerPath,
           // redirect: HomeRedirect(),
           pageBuilder: (context, state) => PageBuilders.slideVertical(
             state: state,

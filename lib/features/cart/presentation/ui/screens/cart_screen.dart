@@ -1,10 +1,12 @@
 import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
-import 'package:ecommerce/features/cart/presentation/containers/cart_list.dart';
-import 'package:ecommerce/features/cart/presentation/containers/cart_summary.dart';
+import 'package:ecommerce/features/cart/presentation/ui/containers/cart_list.dart';
+import 'package:ecommerce/features/cart/presentation/ui/containers/cart_summary.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
+  static const path = "/layout/cart";
+
   const CartScreen({super.key});
 
   @override
