@@ -1,6 +1,5 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +28,7 @@ class ShippingAddressCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Palette.white,
         boxShadow: const [Palette.shadow3],
-        borderRadius: BorderRadius.circular(Sizes.radiusMd),
+        borderRadius: BorderRadius.circular(8).r,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,17 +43,17 @@ class ShippingAddressCard extends StatelessWidget {
               ),
             ],
           ),
-          7.h.sph,
+          7.verticalSpace,
           Text(
             address,
             style: const TextStyle(height: 1.5),
           ),
           if (selected != null) ...[
-            14.h.sph,
+            14.verticalSpace,
             Row(
               children: [
                 ReactiveCheckbox(formControl: FormControl()),
-                10.w.spw,
+                10.horizontalSpace,
                 Text(tr(context).use_address),
               ],
             )

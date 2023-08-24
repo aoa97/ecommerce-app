@@ -1,7 +1,6 @@
 import 'package:ecommerce/assets/fonts.gen.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +32,7 @@ class AppTheme {
           backgroundColor: Palette.primary,
           foregroundColor: Palette.white,
           textStyle: _baseTextStyle(fontWeight: FontWeight.w500, fontSize: 14),
-          minimumSize: Size(double.infinity, Sizes.x48),
+          minimumSize: Size(double.infinity, 48.h),
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(

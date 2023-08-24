@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +32,7 @@ class HomeCarousel extends HookWidget {
     });
 
     return SizedBox(
-      height: Sizes.mqh * .2,
+      height: .2.sh,
       width: double.infinity,
       child: Stack(
         alignment: Alignment.bottomCenter,

@@ -21,9 +21,3 @@ extension TextStyleExtension on BuildContext {
   TextStyle? get labelLargeText => Theme.of(this).textTheme.labelLarge;
   Color? get primaryColor => Theme.of(this).primaryColor;
 }
-
-extension SpacesExtension on num {
-  SizedBox get spw => SizedBox(width: toDouble());
-  SizedBox get sph => SizedBox(height: toDouble());
-  SizedBox get spmqn => SizedBox(height: toDouble());
-}

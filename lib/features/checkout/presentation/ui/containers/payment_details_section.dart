@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PaymentDetailsSection extends StatelessWidget {
   const PaymentDetailsSection({super.key});
@@ -17,7 +18,7 @@ class PaymentDetailsSection extends StatelessWidget {
             TextButton(onPressed: () {}, child: Text(tr(context).change)),
           ],
         ),
-        17.sph,
+        17.verticalSpace,
         const Text("Payment Details"),
       ],
     );

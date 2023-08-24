@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
 import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/core/presentation/widgets/shipping_address_card.dart';
@@ -29,7 +28,7 @@ class AddressesScreen extends StatelessWidget {
             selected: true,
           );
         },
-        separatorBuilder: (_, __) => 24.sph,
+        separatorBuilder: (_, __) => 24.verticalSpace,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

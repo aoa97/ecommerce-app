@@ -4,8 +4,8 @@ import 'package:ecommerce/core/features/locale/presentation/controller/locale_cu
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/helpers.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class MainAppBar {
@@ -39,7 +39,7 @@ class MainAppBar {
   }) {
     return AppBar(
       backgroundColor: backgroundColor ?? Palette.background,
-      toolbarHeight: Sizes.mqh * .10,
+      toolbarHeight: .10.sh,
       actions: actions,
       leading: elseNull(
         condition: hasBackButton,

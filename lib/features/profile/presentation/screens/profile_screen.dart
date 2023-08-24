@@ -4,7 +4,6 @@ import 'package:ecommerce/core/application/service_locator.dart';
 import 'package:ecommerce/core/features/locale/presentation/controller/locale_cubit.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/core/presentation/widgets/main_body.dart';
 import 'package:ecommerce/features/auth/presentation/screens/auth_screen.dart';
@@ -35,28 +34,28 @@ class ProfileScreen extends StatelessWidget {
             Text(
               tr(context).join_message,
               textAlign: TextAlign.center,
-              style: context.displaySmallText!.copyWith(height: 1.5, fontWeight: FontWeight.w500),
+              style: context.displaySmallText!.copyWith(height: 1.5.h, fontWeight: FontWeight.w500),
             ),
-            16.h.sph,
+            16.verticalSpace,
             ElevatedButton(
               onPressed: () {
                 context.push(AuthScreen.loginPath);
               },
               style: ElevatedButton.styleFrom(
                 elevation: 0,
-                shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(Sizes.radius)),
+                shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(4.r)),
                 minimumSize: Size(0, 45.h),
               ),
               child: Text(tr(context).login),
             ),
-            12.h.sph,
+            12.verticalSpace,
             OutlinedButton(
               onPressed: () {
                 context.push(AuthScreen.registerPath);
               },
               style: OutlinedButton.styleFrom(
                 elevation: 0,
-                shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(Sizes.radius)),
+                shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(4.r)),
                 minimumSize: Size(0, 45.h),
               ),
               child: Text(tr(context).register),

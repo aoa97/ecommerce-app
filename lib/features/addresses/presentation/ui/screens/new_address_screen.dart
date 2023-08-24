@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/core/presentation/widgets/main_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_text_field.dart';
@@ -19,9 +18,9 @@ class NewAddressScreen extends StatelessWidget {
     return Scaffold(
       appBar: MainAppBar.basic(context, hasBackButton: true, title: Text(tr(context).add_shipping_address)),
       body: Padding(
-        padding: EdgeInsets.all(20.h),
+        padding: const EdgeInsets.all(20).h,
         child: SeparatedColumn(
-          separatorBuilder: (_, __) => 20.sph,
+          separatorBuilder: (_, __) => 20.verticalSpace,
           children: [
             MainTextField(
               formControl: FormControl(),

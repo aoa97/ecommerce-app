@@ -1,6 +1,4 @@
-import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -16,7 +14,7 @@ class ProductImageCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.mqh * .47,
+      height: .47.sh,
       color: Palette.background,
       padding: EdgeInsets.all(20.w),
       child: PageView.builder(
@@ -30,7 +28,7 @@ class ProductImageCarousel extends StatelessWidget {
             );
           },
           child: SizedBox(
-            width: Sizes.mqw,
+            width: 1.sw,
             child: Image.network(images[index]),
           ),
         ),

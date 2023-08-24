@@ -1,7 +1,6 @@
 import 'package:ecommerce/core/application/api_service/error/error_model.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,7 +36,7 @@ class _ErrorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: Sizes.mqw * .2),
+      padding: EdgeInsets.symmetric(horizontal: .2.sw),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -45,11 +44,11 @@ class _ErrorWidget extends StatelessWidget {
             dimension: 155,
             child: FittedBox(child: Icon(Icons.error_outline, color: Palette.error)),
           ),
-          12.h.sph,
+          12.verticalSpace,
           Text(title, style: context.headlineLargeText),
-          16.h.sph,
+          16.verticalSpace,
           Text(desc, style: context.labelLargeText!.copyWith(height: 1.5), textAlign: TextAlign.center),
-          20.h.sph,
+          20.verticalSpace,
           ElevatedButton(
             onPressed: onRefresh,
             style: ElevatedButton.styleFrom(

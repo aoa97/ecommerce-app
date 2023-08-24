@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/features/cart/data/models/cart_product_model.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_state.dart';
@@ -23,7 +22,7 @@ class CartList extends StatelessWidget {
         return ListView.separated(
           padding: EdgeInsets.all(16.w),
           itemCount: items.length,
-          separatorBuilder: (_, __) => 24.h.sph,
+          separatorBuilder: (_, __) => 24.verticalSpace,
           itemBuilder: (context, index) => CartItem(item: items[index]),
         );
       },
