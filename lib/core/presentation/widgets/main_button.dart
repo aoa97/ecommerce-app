@@ -1,5 +1,5 @@
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainButton extends StatelessWidget {
   final void Function()? onPressed;
@@ -17,7 +17,7 @@ class MainButton extends StatelessWidget {
   }
 
   _buildLoader() => SizedBox.square(
-        dimension: Sizes.x16,
+        dimension: 16.h,
         child: const CircularProgressIndicator(color: Colors.white, strokeWidth: 1.9),
       );
 }

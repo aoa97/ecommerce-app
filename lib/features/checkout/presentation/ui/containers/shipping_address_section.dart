@@ -3,6 +3,7 @@ import 'package:ecommerce/core/presentation/widgets/shipping_address_card.dart';
 import 'package:ecommerce/features/addresses/presentation/ui/screens/addresses_screen.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class ShippingAddressSection extends StatelessWidget {
@@ -14,7 +15,7 @@ class ShippingAddressSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(tr(context).shipping_address, style: context.headlineSmallText!.copyWith(fontSize: 16)),
-        20.sph,
+        20.verticalSpace,
         ShippingAddressCard(
           fullName: "John Doe",
           address: "3 Newbridge Court\nChino Hills, CA 91709, United States",

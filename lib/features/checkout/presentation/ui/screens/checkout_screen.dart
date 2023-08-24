@@ -1,4 +1,3 @@
-import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/widgets/main_app_bar.dart';
 import 'package:ecommerce/features/checkout/presentation/ui/containers/checkout_summary.dart';
 import 'package:ecommerce/features/checkout/presentation/ui/containers/delivery_method_section.dart';
@@ -18,14 +17,14 @@ class CheckoutScreen extends StatelessWidget {
     return Scaffold(
       appBar: MainAppBar.basic(context, hasBackButton: true, title: Text(tr(context).checkout)),
       body: Padding(
-        padding: EdgeInsets.all(20.h),
+        padding: const EdgeInsets.all(20).h,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const ShippingAddressSection(),
-            57.sph,
+            57.verticalSpace,
             const PaymentDetailsSection(),
-            57.sph,
+            57.verticalSpace,
             const DeliveryMethodSection()
           ],
         ),

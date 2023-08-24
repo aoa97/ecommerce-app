@@ -1,7 +1,6 @@
 import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/reactive_fields/reactive_counter.dart';
 import 'package:ecommerce/features/cart/data/models/cart_product_model.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
@@ -32,7 +31,7 @@ class CartItem extends StatelessWidget {
       background: Container(
         color: Palette.grey.withOpacity(.5),
         alignment: AlignmentDirectional.centerStart,
-        padding: const EdgeInsetsDirectional.only(start: 20),
+        padding: EdgeInsetsDirectional.only(start: 20.h),
         child: Assets.icons.favoriteFilled.svg(
           width: 22,
           colorFilter: const ColorFilter.mode(Palette.white, BlendMode.srcIn),
@@ -40,15 +39,15 @@ class CartItem extends StatelessWidget {
       ),
       secondaryBackground: Container(
         alignment: AlignmentDirectional.centerEnd,
-        padding: const EdgeInsetsDirectional.only(end: 20),
+        padding: EdgeInsetsDirectional.only(end: 20.h),
         color: Palette.error,
-        child: const Icon(Icons.delete, color: Palette.white, size: 25),
+        child: Icon(Icons.delete, color: Palette.white, size: 25.h),
       ),
       child: Container(
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
           color: Palette.white,
-          borderRadius: BorderRadius.circular(Sizes.radiusMd),
+          borderRadius: BorderRadius.circular(8).r,
         ),
         child: IntrinsicHeight(
           child: Row(
@@ -63,7 +62,7 @@ class CartItem extends StatelessWidget {
                     Container(
                       height: 104.h,
                       width: double.infinity,
-                      padding: EdgeInsets.all(5.w),
+                      padding: const EdgeInsets.all(5).h,
                       child: Image.network(
                         item.image!,
                         errorBuilder: (context, error, stackTrace) => const SizedBox(),
@@ -82,25 +81,25 @@ class CartItem extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Padding(
-                  padding: EdgeInsets.all(11.h),
+                  padding: const EdgeInsets.all(11).h,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(item.brand, style: context.labelSmallText),
-                      4.h.sph,
+                      4.verticalSpace,
                       Text(
                         item.description,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: context.headlineSmallText,
                       ),
-                      8.h.sph,
+                      8.verticalSpace,
                       Text(
                         "${item.price} ${tr(context).egp}",
                         style: context.headlineMediumText!,
                       ),
-                      if (item.priceBefore != null || item.discountPercentage != null) 8.h.sph,
+                      if (item.priceBefore != null || item.discountPercentage != null) 8.verticalSpace,
                       Text.rich(
                         TextSpan(
                           children: [
@@ -120,15 +119,15 @@ class CartItem extends StatelessWidget {
                           ],
                         ),
                       ),
-                      16.h.sph,
+                      16.verticalSpace,
                       Theme(
                         data: Theme.of(context).copyWith(
                           filledButtonTheme: FilledButtonThemeData(
                             style: FilledButton.styleFrom(
                               backgroundColor: Palette.grey.withOpacity(.1),
                               textStyle: context.bodyMediumText!.copyWith(fontSize: 12.sp),
-                              shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(Sizes.radius)),
-                              padding: EdgeInsets.symmetric(horizontal: 12.w),
+                              shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(4).r),
+                              padding: const EdgeInsets.symmetric(horizontal: 12).w,
                               minimumSize: Size(0, 32.h),
                             ),
                           ),
@@ -140,12 +139,12 @@ class CartItem extends StatelessWidget {
                               onPressed: () => cubit.deleteItem(item),
                               child: Text(tr(context).delete),
                             ),
-                            8.w.spw,
+                            8.horizontalSpace,
                             FilledButton.tonal(
                               onPressed: () {},
                               child: Text(tr(context).save_for_later),
                             ),
-                            8.w.spw,
+                            8.horizontalSpace
                           ],
                         ),
                       )

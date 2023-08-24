@@ -25,7 +25,7 @@ class ProductDetailsBody extends StatelessWidget {
         return ListView(
           children: [
             ProductImageCarousel(images: product!.gallery!),
-            16.h.sph,
+            16.verticalSpace,
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Column(
@@ -39,9 +39,9 @@ class ProductDetailsBody extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(product.title, style: context.displaySmallText),
-                          4.h.sph,
+                          4.verticalSpace,
                           Text(product.brand, style: context.labelMediumText),
-                          8.h.sph,
+                          8.verticalSpace,
                           MainRating(rating: product.rating),
                         ],
                       ),
@@ -69,7 +69,7 @@ class ProductDetailsBody extends StatelessWidget {
                             ),
                           ),
                           if (product.priceBefore != null) ...[
-                            8.h.sph,
+                            8.verticalSpace,
                             Text(
                               "${product.discountPercentage?.round()}% ${tr(context).discount}",
                               style: context.labelMediumText!.copyWith(color: Palette.success),
@@ -79,7 +79,7 @@ class ProductDetailsBody extends StatelessWidget {
                       ),
                     ],
                   ),
-                  12.h.sph,
+                  12.verticalSpace,
                   Text(
                     product.description,
                     textAlign: TextAlign.justify,

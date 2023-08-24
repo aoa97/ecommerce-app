@@ -1,6 +1,5 @@
 import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/features/cart/presentation/controller/cart_cubit.dart';
 import 'package:ecommerce/features/cart/presentation/ui/screens/cart_screen.dart';
 import 'package:ecommerce/features/favorites/presentation/ui/screens/favorites_screen.dart';
@@ -24,14 +23,14 @@ class MainLayoutScreen extends HookWidget {
 
     final items = [
       (
-        icon: Assets.icons.home.svg(width: Sizes.x28),
-        activeIcon: Assets.icons.homeFilled.svg(width: Sizes.x28),
+        icon: Assets.icons.home.svg(width: 28.h),
+        activeIcon: Assets.icons.homeFilled.svg(width: 28.h),
         label: tr(context).home,
         path: HomeScreen.path
       ),
       // (
-      //   icon: Assets.icons.shop.svg(width: Sizes.x28),
-      //   activeIcon: Assets.icons.shopFilled.svg(width: Sizes.x28),
+      //   icon: Assets.icons.shop.svg(width: 28.h),
+      //   activeIcon: Assets.icons.shopFilled.svg(width: 28.h),
       //   label: tr(context).shop,
       //   path: ShopScreen.path,
       // ),
@@ -43,22 +42,22 @@ class MainLayoutScreen extends HookWidget {
             label: Text(count.toString()),
             isLabelVisible: count > 0,
             backgroundColor: Palette.primary,
-            child: Assets.icons.bag.svg(width: Sizes.x28),
+            child: Assets.icons.bag.svg(width: 28.h),
           );
         }),
-        activeIcon: Assets.icons.bagFilled.svg(width: Sizes.x28),
+        activeIcon: Assets.icons.bagFilled.svg(width: 28.h),
         label: tr(context).cart,
         path: CartScreen.path,
       ),
       (
-        icon: Assets.icons.heart.svg(width: Sizes.x28),
-        activeIcon: Assets.icons.heartFilled.svg(width: Sizes.x28),
+        icon: Assets.icons.heart.svg(width: 28.h),
+        activeIcon: Assets.icons.heartFilled.svg(width: 28.h),
         label: tr(context).favorites,
         path: FavoritesScreen.path,
       ),
       (
-        icon: Assets.icons.person.svg(width: Sizes.x28),
-        activeIcon: Assets.icons.personFilled.svg(width: Sizes.x28),
+        icon: Assets.icons.person.svg(width: 28.h),
+        activeIcon: Assets.icons.personFilled.svg(width: 28.h),
         label: tr(context).profile,
         path: ProfileScreen.path,
       ),

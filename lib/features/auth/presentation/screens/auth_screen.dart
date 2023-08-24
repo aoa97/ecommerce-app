@@ -2,7 +2,6 @@ import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/presentation/utils/enums.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/core/presentation/widgets/main_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_social_button.dart';
 import 'package:ecommerce/core/presentation/widgets/main_text_field.dart';
@@ -10,6 +9,7 @@ import 'package:ecommerce/features/home/presentation/ui/screens/home_screen.dart
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
@@ -31,28 +31,19 @@ class AuthScreen extends HookWidget {
       appBar: AppBar(
         centerTitle: false,
         backgroundColor: Palette.background,
-        toolbarHeight: Sizes.mqh * .15,
-        title: Text(
-          isLogin ? tr(context).login : tr(context).register,
-          style: Theme.of(context).textTheme.displayLarge,
-        ),
+        toolbarHeight: .15.sh,
+        title: Text(isLogin ? tr(context).login : tr(context).register, style: context.displayLargeText),
       ),
       body: Padding(
-        padding: EdgeInsets.all(Sizes.x16),
+        padding: const EdgeInsets.all(16).h,
         child: Column(
           children: [
             if (!isLogin) ...[
-              MainTextField(
-                formControl: FormControl(),
-                label: tr(context).name,
-              ),
-              Sizes.x8.sph,
+              MainTextField(formControl: FormControl(), label: tr(context).name),
+              8.verticalSpace,
             ],
-            MainTextField(
-              formControl: FormControl(),
-              label: tr(context).email,
-            ),
-            Sizes.x8.sph,
+            MainTextField(formControl: FormControl(), label: tr(context).email),
+            8.verticalSpace,
             MainTextField(
               obsecure: !visiblePassword.value,
               formControl: FormControl(),
@@ -62,7 +53,7 @@ class AuthScreen extends HookWidget {
                 icon: Icon(visiblePassword.value ? Icons.visibility_off : Icons.visibility),
               ),
             ),
-            Sizes.x8.sph,
+            8.verticalSpace,
             if (isLogin)
               Align(
                 alignment: AlignmentDirectional.centerEnd,
@@ -75,7 +66,7 @@ class AuthScreen extends HookWidget {
                   ),
                 ),
               ),
-            Sizes.x24.sph,
+            24.verticalSpace,
             MainButton(
               onPressed: () {
                 // TODO: Temp
@@ -84,7 +75,7 @@ class AuthScreen extends HookWidget {
               loading: false,
               label: isLogin ? tr(context).login : tr(context).register,
             ),
-            Sizes.x24.sph,
+            24.verticalSpace,
             TextButton(
               onPressed: () {
                 if (isLogin) {
@@ -113,19 +104,13 @@ class AuthScreen extends HookWidget {
               style: context.headlineSmallText,
               textAlign: TextAlign.center,
             ),
-            Sizes.x12.sph,
+            12.verticalSpace,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MainSocialButton(
-                  icon: Assets.icons.facebook.path,
-                  onPressed: () {},
-                ),
-                Sizes.x16.spw,
-                MainSocialButton(
-                  icon: Assets.icons.google.path,
-                  onPressed: () {},
-                ),
+                MainSocialButton(icon: Assets.icons.facebook.path, onPressed: () {}),
+                16.horizontalSpace,
+                MainSocialButton(icon: Assets.icons.google.path, onPressed: () {}),
               ],
             )
           ],

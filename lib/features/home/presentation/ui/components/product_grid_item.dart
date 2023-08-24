@@ -2,7 +2,6 @@ import 'package:ecommerce/assets/assets.gen.dart';
 import 'package:ecommerce/core/data/models/product_item_model.dart';
 import 'package:ecommerce/core/presentation/utils/extensions.dart';
 import 'package:ecommerce/core/presentation/utils/palette.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:ecommerce/features/product/presentation/screens/product_screen.dart';
 import 'package:ecommerce/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class ProductGridItem extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
         decoration: BoxDecoration(
           color: Palette.white,
-          borderRadius: BorderRadius.circular(Sizes.radiusLg),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,9 +33,9 @@ class ProductGridItem extends StatelessWidget {
                 child: Image.network(item.image!),
               ),
             ),
-            16.sph,
+            16.verticalSpace,
             Text(item.title, style: context.bodyMediumText),
-            4.sph,
+            4.verticalSpace,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -51,12 +50,12 @@ class ProductGridItem extends StatelessWidget {
                   ),
               ],
             ),
-            8.sph,
+            8.verticalSpace,
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Assets.icons.starFilled.svg(width: 12.w),
-                3.spw,
+                3.horizontalSpace,
                 Text(
                   item.rating.toString(),
                   style: context.bodySmallText!,

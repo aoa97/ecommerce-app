@@ -1,6 +1,5 @@
-import 'package:ecommerce/core/presentation/utils/extensions.dart';
-import 'package:ecommerce/core/presentation/utils/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class MainTextField extends StatelessWidget {
@@ -21,7 +20,7 @@ class MainTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(Sizes.radius),
+        borderRadius: BorderRadius.circular(4).r,
         boxShadow: const [BoxShadow(offset: Offset(0, 1), blurRadius: 8, color: Color.fromRGBO(0, 0, 0, 0.05))],
       ),
       child: ReactiveTextField(
@@ -29,7 +28,7 @@ class MainTextField extends StatelessWidget {
         obscureText: obsecure,
         decoration: InputDecoration(
           label: Text(label),
-          prefix: 4.spw,
+          prefix: 4.horizontalSpace,
           suffixIcon: suffixIcon,
         ),
       ),
